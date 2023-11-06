@@ -10,6 +10,7 @@ public class UserPreferences {
         sharedPreferences = context.getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
     }
 
+    // this is where you set the password for the user account and saves it
     public void saveUser(String email, String password) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("EMAIL", email);
