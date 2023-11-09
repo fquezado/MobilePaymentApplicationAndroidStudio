@@ -25,6 +25,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
+        //chicken chicken asdadadhajidhjhasgdhgashidasjd-asd=
         emailEditText = findViewById(R.id.emailEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         loginButton = findViewById(R.id.loginButton);
@@ -35,10 +37,10 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //String email = emailEditText.getText().toString();
-                //String password = passwordEditText.getText().toString();
-                String email = "email";
-                String password = "pass";
+                String email = emailEditText.getText().toString();
+                String password = passwordEditText.getText().toString();
+                //String email = "email";
+                //String password = "pass";
                 userPreferences.saveUser(email, password);
 
                 String[] savedCredentials = userPreferences.getUser();
