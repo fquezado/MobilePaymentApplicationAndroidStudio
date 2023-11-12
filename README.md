@@ -29,4 +29,14 @@ Benefits:
 - Reduced likelihood of input errors through a clear and intuitive design.
 
 Vish Pallem: 
+Object-Oriented Design Pattern - Simpleton
 
+User Interface Pattern - Dealing with Data
+
+Integration Within Application:
+   - Integrated within Transaction History View where a lot of data is stored
+   - Implement easy navigation and sorting fields to easily sort through transactions and find specific ones
+
+Benefits:
+-Easy navigation within transactions
+-Efficient sorting of transactions based on values such as transaction date, amount, or recepient
