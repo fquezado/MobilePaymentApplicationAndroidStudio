@@ -22,6 +22,7 @@ User Interface Pattern - Getting Input
 Integration Throughout the Application:
    - Integrate the Getting Input pattern throughout the application where user input is required.
    - Implement well-designed input fields, forms, and dialog boxes for organized data input.
+   - I will be implenting this in the upcoming weeks in the Transaction History Class. 
 
 Benefits:
 - Streamlined input of crucial data.
