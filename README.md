@@ -40,4 +40,12 @@ Integration Within Application:
 
 Benefits:
 -Easy navigation within transactions
--Efficient sorting of transactions based on values such as transaction date, amount, or recepient
+-Efficient sorting of transactions based on values such as transaction date, amount, or recipient
+
+**Haojie Zhang:**
+Object-Oriented Design Pattern - 
+User Interface Pattern - 
+
+Integration Within Application:
+
+Benefits:
