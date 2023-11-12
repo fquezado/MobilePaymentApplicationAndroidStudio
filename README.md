@@ -19,6 +19,7 @@ Implementation of Mobile Payment App through android studio
 | 5              | Vish             | xxx                                | xxx                                        |   |
 | 6              | Fernando         | xxx                                | xxx                                        |   |
 
+#
 **Claudio Tapia-Manon:**
 
 Object-Oriented Design Pattern - Prototype
@@ -44,8 +45,8 @@ Benefits:
 - Streamlined input of crucial data.
 - Simplified user experience.
 - Reduced likelihood of input errors through a clear and intuitive design.
-
-Vish Pallem: 
+#
+**Vish Pallem:**
 Object-Oriented Design Pattern - Simpleton
 
 User Interface Pattern - Dealing with Data
