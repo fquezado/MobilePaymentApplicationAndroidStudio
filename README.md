@@ -1,7 +1,23 @@
 # MobilePaymentApplicationAndroidStudio
 Implementation of Mobile Payment App through android studio
 
-**Fernando Quezado:**
+| Team-Member ID | Team-Member Name | Design Pattern Implemented    | Classes / Interfaces implementing the design pattern |   |
+|----------------|------------------|-------------------------------|------------------------------------------------------|---|
+| 1              | Luke             | Factory / Onboarding          | xxx                                                  |   |
+| 2              | Claudio          | Prototype / Getting Input     | xxx                                                  |   |
+| 3              | Haije            | Decorator / Social Interface  | xxx                                                  |   |
+| 4              | Muhab            | Builder / Navigation          | xxx                                                  |   |
+| 5              | Vish             | Singleton / Dealing with Data | xxx                                                  |   |
+| 6              | Fernando         | ? / ?                         | xxx                                                  |   |
+
+| Team-Member ID | Team-Member Name | % Efforts in Particular Assignment | Brief of Efforts in the Tasks Contribution |   |
+|----------------|------------------|------------------------------------|--------------------------------------------|---|
+| 1              | Luke             | xxx                                | xxx                                        |   |
+| 2              | Claudio          | xxx                                | xxx                                        |   |
+| 3              | Haije            | xxx                                | xxx                                        |   |
+| 4              | Muhab            | xxx                                | xxx                                        |   |
+| 5              | Vish             | xxx                                | xxx                                        |   |
+| 6              | Fernando         | xxx                                | xxx                                        |   |
 
 **Claudio Tapia-Manon:**
 
