@@ -1,14 +1,16 @@
 # MobilePaymentApplicationAndroidStudio
 Implementation of Mobile Payment App through android studio
 
+                                                 
 | Team-Member ID | Team-Member Name | Design Pattern Implemented    | Classes / Interfaces implementing the design pattern |   |
 |----------------|------------------|-------------------------------|------------------------------------------------------|---|
+|
 | 1              | Luke             | Factory / Onboarding          | activity_onboarding.xml                              
 | 2              | Claudio          | Prototype / Getting Input     | xxx                                                  
-| 3              | Haije            | Decorator / Social Interface  | xxx                                                  
+| 3              | Haojie           | Decorator / Social Interface  | RegisterActivity.java / activity_register.xml                                                   
 | 4              | Muhab            | Builder / Navigation          | AddPaymentActivity.java                                                  
 | 5              | Vish             | Singleton / Dealing with Data | xxx                                                  
-| 6              | Fernando         | ? / ?                         | xxx                                                  
+| 6              | Fernando         | ? / ?                         | xxx                                                 
 
 | Team-Member ID | Team-Member Name | % Efforts in Particular Assignment | Brief of Efforts in the Tasks Contribution |   |
 |----------------|------------------|------------------------------------|--------------------------------------------|---|
@@ -57,4 +59,12 @@ Integration Within Application:
 
 Benefits:
 -Easy navigation within transactions
--Efficient sorting of transactions based on values such as transaction date, amount, or recepient
+-Efficient sorting of transactions based on values such as transaction date, amount, or recipient
+
+**Haojie Zhang:**
+Object-Oriented Design Pattern - 
+User Interface Pattern - 
+
+Integration Within Application:
+
+Benefits:
