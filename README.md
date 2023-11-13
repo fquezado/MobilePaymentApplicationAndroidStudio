@@ -9,7 +9,7 @@ Implementation of Mobile Payment App through android studio
 | 3              | Haojie           | Decorator / Social Interface  | RegisterActivity.java / activity_register.xml                                                   
 | 4              | Muhab            | Builder / Navigation          | AddPaymentActivity.java                                                  
 | 5              | Vish             | Singleton / Dealing with Data | TramsactionHistory.xml                                                 
-| 6              | Fernando         | ? / ?                         | xxx                                                 
+| 6              | Fernando         | Observer / Navigation         | ResgisterActivity.java / MainActivity.java / addDebitInfoActivity.java / addBankInfoActivity.java                                                 
 
 | Team-Member ID | Team-Member Name | % Efforts in Particular Assignment | Brief of Efforts in the Tasks Contribution |   |
 |----------------|------------------|------------------------------------|--------------------------------------------|---|
@@ -18,7 +18,7 @@ Implementation of Mobile Payment App through android studio
 | 3              | Haojie           | xxx                                | User Registration Activity implementations with XML page                                        
 | 4              | Muhab            | 16                                 | Design Patterns Implementations and Navigation Functionality                                         
 | 5              | Vish             | 16                                 | Design Pattern and XML Page Implementation                                      
-| 6              | Fernando         | xxx                                | xxx                                        
+| 6              | Fernando         | 20                                 | Creating framwork for entire app and implement navigation for app                                        
 
 #
 **Claudio Tapia-Manon:**
@@ -59,7 +59,7 @@ Integration Within Application:
 Benefits:
 -Easy navigation within transactions
 -Efficient sorting of transactions based on values such as transaction date, amount, or recipient
-
+#
 **Haojie Zhang:**
 Object-Oriented Design Pattern - 
 User Interface Pattern - 
