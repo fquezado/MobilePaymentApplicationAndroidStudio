@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -19,6 +19,7 @@
             android:layout_marginBottom="16dp" />
 
         <EditText
+            android:id="@+id/creditCardNumberEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Card Number"
@@ -26,12 +27,14 @@
             android:layout_marginBottom="16dp" />
 
         <EditText
+            android:id="@+id/creditCardHolderNameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Cardholder Name"
             android:layout_marginBottom="16dp" />
 
         <EditText
+            android:id="@+id/creditExpirationDateEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Expiration Date (MM/YY)"
@@ -39,16 +42,18 @@
             android:layout_marginBottom="16dp" />
 
         <EditText
+            android:id="@+id/creditCVVEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="CVV"
             android:inputType="number"
             android:layout_marginBottom="16dp" />
-
         <Button
+            android:id="@+id/saveCreditInfoButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Save Credit Card Info" />
+            android:text="Save Bank Account Info" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
