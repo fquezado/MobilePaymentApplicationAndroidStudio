@@ -6,4 +6,51 @@
     android:layout_height="match_parent"
     tools:context=".SplashPageActivity">
 
+    <ImageView
+        android:id="@+id/SplashPageLogo"
+        android:layout_width="164dp"
+        android:layout_height="224dp"
+        android:layout_marginStart="123dp"
+        android:layout_marginTop="82dp"
+        android:layout_marginEnd="124dp"
+        android:layout_marginBottom="-100dp"
+        android:contentDescription="logo"
+        android:cropToPadding="true"
+        app:layout_constraintBottom_toTopOf="@+id/SplashPageText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/screenshot_2023_11_12_at_20_21_11" />
+
+    <TextView
+        android:id="@+id/SplashPageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="325dp"
+        android:text="Welcome to Money Flow"
+        android:textColor="#FA000000"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SplashPageLogo" />
+
+    <Button
+        android:id="@+id/SplashPageContinueButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="161dp"
+        android:layout_marginEnd="151dp"
+        android:layout_marginBottom="149dp"
+        android:text="Continue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SplashPageText" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
