@@ -5,7 +5,7 @@ Implementation of Mobile Payment App through android studio
 |----------------|------------------|-------------------------------|------------------------------------------------------|---|
 | 1              | Luke             | Factory / Onboarding          | xxx                                                  |   |
 | 2              | Claudio          | Prototype / Getting Input     | xxx                                                  |   |
-| 3              | Haije            | Decorator / Social Interface  | xxx                                                  |   |
+| 3              | Haojie           | Decorator / Social Interface  | RegisterActivity.java / activity_register.xml        |   |
 | 4              | Muhab            | Builder / Navigation          | xxx                                                  |   |
 | 5              | Vish             | Singleton / Dealing with Data | xxx                                                  |   |
 | 6              | Fernando         | ? / ?                         | xxx                                                  |   |
