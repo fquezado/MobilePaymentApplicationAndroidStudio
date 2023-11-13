@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Onboarding"
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/textViewSubheading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Click to Learn More"
+            android:textSize="16sp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_below="@id/textViewTitle"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="32dp" />
+
+        <Button
+            android:id="@+id/buttonLoginRegistration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login/Registration"
+            android:layout_below="@id/textViewSubheading"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/buttonTransactionsUsers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Transactions with Users"
+            android:layout_below="@id/buttonLoginRegistration"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/buttonRetailTransactions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Retail Transactions"
+            android:layout_below="@id/buttonTransactionsUsers"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/buttonOnlineTransactions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Online Transactions"
+            android:layout_below="@id/buttonRetailTransactions"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/buttonViewHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View History"
+            android:layout_below="@id/buttonOnlineTransactions"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/buttonAddPaymentMethod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Payment Method"
+            android:layout_below="@id/buttonViewHistory"
+            android:layout_marginTop="8dp" />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
