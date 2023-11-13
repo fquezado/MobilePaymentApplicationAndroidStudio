@@ -4,7 +4,7 @@ Implementation of Mobile Payment App through android studio
 | Team-Member ID | Team-Member Name | Design Pattern Implemented    | Classes / Interfaces implementing the design pattern |   |
 |----------------|------------------|-------------------------------|------------------------------------------------------|---|
 | 1              | Luke             | Factory / Onboarding          | activity_onboarding.xml                              
-| 2              | Claudio          | Prototype / Getting Input     | xxx                                                  
+| 2              | Claudio          | Prototype / Getting Input     | AddPaymentActivity.java                                                  
 | 3              | Haije            | Decorator / Social Interface  | xxx                                                  
 | 4              | Muhab            | Builder / Navigation          | xxx                                                  
 | 5              | Vish             | Singleton / Dealing with Data | xxx                                                  
@@ -15,7 +15,7 @@ Implementation of Mobile Payment App through android studio
 | 1              | Luke             | 17                                 | Created XML pages for each Payment Method screen
 | 2              | Claudio          | xxx                                | xxx                                        
 | 3              | Haije            | xxx                                | xxx                                        
-| 4              | Muhab            | xxx                                | xxx                                        
+| 4              | Muhab            | 16                                 | Design Patterns Implementations and Navigation Functionality                                         
 | 5              | Vish             | xxx                                | xxx                                        
 | 6              | Fernando         | xxx                                | xxx                                        
 
