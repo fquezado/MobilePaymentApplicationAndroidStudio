@@ -2,6 +2,7 @@ package com.group4.mobilepaymentapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.os.Bundle;
@@ -26,7 +27,6 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
 
-        //chicken chicken asdadadhajidhjhasgdhgashidasjd-asd=
         emailEditText = findViewById(R.id.emailEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         loginButton = findViewById(R.id.loginButton);
@@ -39,14 +39,12 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String email = emailEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
-                //String email = "email";
-                //String password = "pass";
-                userPreferences.saveUser(email, password);
 
                 String[] savedCredentials = userPreferences.getUser();
-                if (email.equals(savedCredentials[0]) && password.equals(savedCredentials[1])) {
+                if (email.equals(savedCredentials[1]) && password.equals(savedCredentials[2])) {
                     Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                    // Navigate to DashboardActivity
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
                 } else {
                     Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
                 }
@@ -56,8 +54,9 @@ public class LoginActivity extends AppCompatActivity {
         registerTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Navigate to RegisterActivity
-            }
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+                }
         });
     }
 }

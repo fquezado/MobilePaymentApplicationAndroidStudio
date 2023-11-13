@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -19,12 +19,14 @@
             android:layout_marginBottom="16dp" />
 
         <EditText
+            android:id="@+id/bankAccountHolderNameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Account Holder Name"
             android:layout_marginBottom="16dp" />
 
         <EditText
+            android:id="@+id/bankAccountNumberEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Account Number"
@@ -32,16 +34,18 @@
             android:layout_marginBottom="16dp" />
 
         <EditText
+            android:id="@+id/bankRoutingNumberEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Routing Number"
             android:inputType="number"
             android:layout_marginBottom="16dp" />
-
         <Button
+            android:id="@+id/saveBankInfoButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Save Bank Account Info" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

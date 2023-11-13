@@ -11,17 +11,19 @@ public class UserPreferences {
     }
 
     // this is where you set the password for the user account and saves it
-    public void saveUser(String email, String password) {
+    public void saveUser(String name, String email, String password) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("NAME", name);
         editor.putString("EMAIL", email);
         editor.putString("PASSWORD", password);
         editor.apply();
     }
 
     public String[] getUser() {
+        String name = sharedPreferences.getString("NAME", null);
         String email = sharedPreferences.getString("EMAIL", null);
         String password = sharedPreferences.getString("PASSWORD", null);
-        return new String[]{email, password};
+        return new String[]{name, email, password};
     }
 }
 
