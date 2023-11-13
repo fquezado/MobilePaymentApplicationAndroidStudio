@@ -4,9 +4,9 @@ Implementation of Mobile Payment App through android studio
 | Team-Member ID | Team-Member Name | Design Pattern Implemented    | Classes / Interfaces implementing the design pattern |   |
 |----------------|------------------|-------------------------------|------------------------------------------------------|---|
 | 1              | Luke             | Factory / Onboarding          | activity_onboarding.xml                              
-| 2              | Claudio          | Prototype / Getting Input     | AddPaymentActivity.java                                                  
+| 2              | Claudio          | Prototype / Getting Input     | xxx                                                  
 | 3              | Haije            | Decorator / Social Interface  | xxx                                                  
-| 4              | Muhab            | Builder / Navigation          | xxx                                                  
+| 4              | Muhab            | Builder / Navigation          | AddPaymentActivity.java                                                  
 | 5              | Vish             | Singleton / Dealing with Data | xxx                                                  
 | 6              | Fernando         | ? / ?                         | xxx                                                  
 
