@@ -11,13 +11,6 @@ import android.widget.Toast;
 
 public class AddPaymentActivity extends AppCompatActivity {
 
-/*
-    private String bankAccountInfo;
-    private String creditCardInfo;
-    private String debitCardInfo;
-
- */
-
     private Button addCreditButton;
     private Button addDebitButton;
     private Button addBankAccountButton;
@@ -61,9 +54,9 @@ public class AddPaymentActivity extends AppCompatActivity {
     }
 }
 /*
+
+
         Button bankButton = findViewById(R.id.saveBankInfoButton);
-        Button creditButton = findViewById(R.id.saveCreditInfoButton);
-        Button debitButton = findViewById(R.id.saveDebitInfoButton);
 
         bankButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,20 +65,6 @@ public class AddPaymentActivity extends AppCompatActivity {
             }
         });
 
-        creditButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                saveCreditInfo();
-            }
-        });
-
-        debitButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                saveDebitInfo();
-            }
-        });
-    }
 
     private void saveBankInfo() {
         EditText accountHolderNameEditText = findViewById(R.id.bankAccountHolderNameEditText);
@@ -98,31 +77,5 @@ public class AddPaymentActivity extends AppCompatActivity {
 
     }
 
-    private void saveCreditInfo() {
-        EditText cardNumberEditText = findViewById(R.id.creditCardNumberEditText);
-        EditText cardHolderNameEditText = findViewById(R.id.creditCardHolderNameEditText);
-        EditText expirationDateEditText = findViewById(R.id.creditExpirationDateEditText);
-        EditText cvvEditText = findViewById(R.id.creditCVVEditText);
-
-        creditCardInfo = "Card Number: " + cardNumberEditText.getText().toString() +
-                "\nCardholder Name: " + cardHolderNameEditText.getText().toString() +
-                "\nExpiration Date: " + expirationDateEditText.getText().toString() +
-                "\nCVV: " + cvvEditText.getText().toString();
-
-    }
-
-    private void saveDebitInfo() {
-        EditText cardNumberEditText = findViewById(R.id.debitCardNumberEditText);
-        EditText cardHolderNameEditText = findViewById(R.id.debitCardHolderNameEditText);
-        EditText expirationDateEditText = findViewById(R.id.debitExpirationDateEditText);
-        EditText cvvEditText = findViewById(R.id.debitCVVEditText);
-
-        debitCardInfo = "Card Number: " + cardNumberEditText.getText().toString() +
-                "\nCardholder Name: " + cardHolderNameEditText.getText().toString() +
-                "\nExpiration Date: " + expirationDateEditText.getText().toString() +
-                "\nCVV: " + cvvEditText.getText().toString();
-
-    }
-}
 
  */

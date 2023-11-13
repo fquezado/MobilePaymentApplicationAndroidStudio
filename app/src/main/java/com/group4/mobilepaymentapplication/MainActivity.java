@@ -31,9 +31,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Check if userName is not null
         if (userName != null && !userName.isEmpty()) {
-            welcomeTextView.setText("WELCOME, " + userName + "!");
+            welcomeTextView.setText("Welcome, " + userName + "!");
         } else {
-            welcomeTextView.setText("WELCOME!");
+            welcomeTextView.setText("Welcome!");
         }
 
 
