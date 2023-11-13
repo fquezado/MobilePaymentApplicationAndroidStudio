@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
         goToPaymentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Start LoginActivity
                 Intent intent = new Intent(MainActivity.this, AddPaymentActivity.class);
                 startActivity(intent);
             }
