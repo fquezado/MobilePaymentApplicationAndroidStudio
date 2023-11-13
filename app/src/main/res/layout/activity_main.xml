@@ -14,7 +14,7 @@
         android:layout_marginTop="88dp"
         android:layout_marginEnd="146dp"
         android:layout_marginBottom="611dp"
-        android:text="WELCOME!"
+        android:text="WELCOME! "
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
