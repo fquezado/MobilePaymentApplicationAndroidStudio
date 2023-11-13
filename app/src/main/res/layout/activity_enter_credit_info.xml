@@ -48,11 +48,12 @@
             android:hint="CVV"
             android:inputType="number"
             android:layout_marginBottom="16dp" />
+
         <Button
             android:id="@+id/saveCreditInfoButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Save Bank Account Info" />
+            android:text="Save Credit Info" />
 
     </LinearLayout>
 
