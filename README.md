@@ -8,7 +8,7 @@ Implementation of Mobile Payment App through android studio
 | 2              | Claudio          | Prototype / Getting Input     | xxx                                                  
 | 3              | Haojie           | Decorator / Social Interface  | RegisterActivity.java / activity_register.xml                                                   
 | 4              | Muhab            | Builder / Navigation          | AddPaymentActivity.java                                                  
-| 5              | Vish             | Singleton / Dealing with Data | xxx                                                  
+| 5              | Vish             | Singleton / Dealing with Data | TramsactionHistory.xml                                                 
 | 6              | Fernando         | ? / ?                         | xxx                                                 
 
 | Team-Member ID | Team-Member Name | % Efforts in Particular Assignment | Brief of Efforts in the Tasks Contribution |   |
@@ -17,7 +17,7 @@ Implementation of Mobile Payment App through android studio
 | 2              | Claudio          | xxx                                | xxx                                        
 | 3              | Haije            | xxx                                | xxx                                        
 | 4              | Muhab            | 16                                 | Design Patterns Implementations and Navigation Functionality                                         
-| 5              | Vish             | xxx                                | xxx                                        
+| 5              | Vish             | 16                                 | Design Pattern and XML Page Implementation                                      
 | 6              | Fernando         | xxx                                | xxx                                        
 
 #
