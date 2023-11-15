@@ -14,7 +14,7 @@ Implementation of Mobile Payment App through android studio
 | Team-Member ID | Team-Member Name | % Efforts in Particular Assignment | Brief of Efforts in the Tasks Contribution |   |
 |----------------|------------------|------------------------------------|--------------------------------------------|---|
 | 1              | Luke             | 17                                 | Created XML pages for each Payment Method screen
-| 2              | Claudio          | xxx                                | xxx                                        
+| 2              | Claudio          | 16                                 | Started implentation of the transaction history page                                         
 | 3              | Haojie           | xxx                                | User Registration Activity implementations with XML page                                        
 | 4              | Muhab            | 16                                 | Design Patterns Implementations and Navigation Functionality                                         
 | 5              | Vish             | 16                                 | Design Pattern and XML Page Implementation                                      
