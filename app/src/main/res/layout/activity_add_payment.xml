@@ -38,7 +38,16 @@
             android:id="@+id/addBankAccountButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:text="Bank Account" />
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Back" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

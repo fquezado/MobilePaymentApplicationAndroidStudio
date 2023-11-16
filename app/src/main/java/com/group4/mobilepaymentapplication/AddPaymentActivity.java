@@ -15,16 +15,21 @@ public class AddPaymentActivity extends AppCompatActivity {
     private Button addDebitButton;
     private Button addBankAccountButton;
 
+    private Button backButton;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_payment);
 
-
         Button addCreditButton = findViewById(R.id.addCreditButton);
         Button addDebitButton = findViewById(R.id.addDebitButton);
         Button addBankAccountButton = findViewById(R.id.addBankAccountButton);
+        Button backButton = findViewById(R.id.backButton);
+
 
         addCreditButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +54,15 @@ public class AddPaymentActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AddPaymentActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        }
+        );
 
 
     }
