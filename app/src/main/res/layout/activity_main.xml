@@ -8,18 +8,21 @@
 
     <TextView
         android:id="@+id/HompageText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="138dp"
+        android:layout_height="58dp"
         android:layout_marginStart="145dp"
         android:layout_marginTop="88dp"
         android:layout_marginEnd="146dp"
         android:layout_marginBottom="611dp"
         android:text="Welcome! "
         android:textSize="24sp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/goToPaymentButton"
@@ -32,8 +35,24 @@
         android:text="Click to Add Payment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/HompageText" />
+        app:layout_constraintTop_toBottomOf="@+id/HompageText"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+    <Button
+        android:id="@+id/useExistingPaymentMethod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginEnd="157dp"
+        android:layout_marginBottom="188dp"
+        android:text="Use Existing Payment Method"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/settingsButton"
@@ -41,8 +60,8 @@
         android:layout_height="58dp"
         android:scaleType="fitCenter"
         app:srcCompat="@drawable/settingsimage"
-        tools:layout_editor_absoluteX="325dp"
-        tools:layout_editor_absoluteY="72dp" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="88dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
