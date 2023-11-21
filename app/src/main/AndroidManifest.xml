@@ -46,6 +46,15 @@
             android:name=".SettingsActivity"
             android:exported="false" />
         <activity
+            android:name=".ExistingCardsActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".PaymentCard"
+            android:exported="false"/>
+        <activity
+            android:name=".RecyclerAdapter"
+            android:exported="false"/>
+        <activity
             android:name=".SplashPageActivity"
             android:exported="true">
             <intent-filter>
