@@ -30,6 +30,10 @@ public class AddDebitInfoActivity extends AppCompatActivity {
 
         debitButton = findViewById(R.id.saveDebitInfoButton);
 
+        //THIS IS WHAT I MODIFIED
+        //cardList = new ArrayList<>();
+        cardList = CardPreferences.getCards(this);
+
         debitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,7 +43,7 @@ public class AddDebitInfoActivity extends AppCompatActivity {
                 EditText expirationDateEditText = findViewById(R.id.debitExpirationDateEditText);
                 EditText cvvEditText = findViewById(R.id.debitCVVEditText);
 
-                cardList = new ArrayList<>();
+
                 paymentCard = new PaymentCard(cardHolderNameEditText.getText().toString(), cardNumberEditText.getText().toString(),
                         expirationDateEditText.getText().toString(), cvvEditText.getText().toString());
                 cardList.add(paymentCard);

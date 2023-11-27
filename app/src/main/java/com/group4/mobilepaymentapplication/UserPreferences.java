@@ -25,5 +25,6 @@ public class UserPreferences {
         String password = sharedPreferences.getString("PASSWORD", null);
         return new String[]{name, email, password};
     }
+
 }
 
