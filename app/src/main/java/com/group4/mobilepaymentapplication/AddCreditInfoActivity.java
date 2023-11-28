@@ -28,6 +28,7 @@ public class AddCreditInfoActivity extends AppCompatActivity {
         Button creditButton = findViewById(R.id.saveCreditInfoButton);
 
         cardList = new ArrayList<>();
+        DatabaseHelper db = new DatabaseHelper(this);
 
         creditButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,9 +40,8 @@ public class AddCreditInfoActivity extends AppCompatActivity {
 
                 paymentCard = new PaymentCard(cardHolderNameEditText.getText().toString(), cardNumberEditText.getText().toString(),
                         expirationDateEditText.getText().toString(), cvvEditText.getText().toString());
-                cardList.add(paymentCard);
+                db.addCard(paymentCard);
                 Intent intent = new Intent(AddCreditInfoActivity.this, ExistingCardsActivity.class);
-                intent.putExtra("cardList", cardList);
                 startActivity(intent);
             }
         });

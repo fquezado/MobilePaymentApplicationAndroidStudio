@@ -29,8 +29,8 @@ public class ExistingCardsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_existing_payment_methods);
         recyclerView = findViewById(R.id.recyclerCardView);
-        cardList = getIntent().getParcelableArrayListExtra("cardList");
-        CardPreferences.saveCards(this, cardList);
+        DatabaseHelper db = new DatabaseHelper(this);
+        cardList = db.getAllCards();
         setAdapter();
 
         backButton = findViewById(R.id.backButtonRecyclerView);

@@ -30,9 +30,8 @@ public class AddDebitInfoActivity extends AppCompatActivity {
 
         debitButton = findViewById(R.id.saveDebitInfoButton);
 
-        //THIS IS WHAT I MODIFIED
-        //cardList = new ArrayList<>();
-        cardList = CardPreferences.getCards(this);
+        cardList = new ArrayList<>();
+        DatabaseHelper db = new DatabaseHelper(this);
 
         debitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,9 +45,9 @@ public class AddDebitInfoActivity extends AppCompatActivity {
 
                 paymentCard = new PaymentCard(cardHolderNameEditText.getText().toString(), cardNumberEditText.getText().toString(),
                         expirationDateEditText.getText().toString(), cvvEditText.getText().toString());
-                cardList.add(paymentCard);
+
+                db.addCard(paymentCard);
                 Intent intent = new Intent(AddDebitInfoActivity.this, ExistingCardsActivity.class);
-                intent.putExtra("cardList", cardList);
                 startActivity(intent);
             }
         });

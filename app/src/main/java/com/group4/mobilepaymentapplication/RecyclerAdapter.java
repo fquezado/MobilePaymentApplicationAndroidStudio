@@ -28,7 +28,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
             super (view);
             nameTxt = view.findViewById(R.id.textCardHolderName);
             numberTxt = view.findViewById(R.id.textCardNumber);
-
         }
     }
 
