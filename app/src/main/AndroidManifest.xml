@@ -13,6 +13,18 @@
         android:theme="@style/Theme.MobilePaymentApplication"
         tools:targetApi="31">
         <activity
+            android:name=".HelpandSupportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PaymentPreferencesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReceiveActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AccountInformation"
+            android:exported="false" />
+        <activity
             android:name=".AddDebitInfoActivity"
             android:exported="false" />
         <activity
@@ -22,10 +34,7 @@
             android:name=".AddCreditInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfileActivity"
-            android:exported="false" />
-        <activity
-            android:name=".PayReceiveActivity"
+            android:name=".PayActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
@@ -47,13 +56,13 @@
             android:exported="false" />
         <activity
             android:name=".ExistingCardsActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".PaymentCard"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".RecyclerAdapter"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".SplashPageActivity"
             android:exported="true">

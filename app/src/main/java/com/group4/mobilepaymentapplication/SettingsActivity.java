@@ -10,6 +10,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SettingsActivity extends AppCompatActivity {
     private Button logOutButton;
+    private Button PaymentPreferencesButton;
+
+    private Button TransactionHistoryButton;
+    private Button AccountInformationButton;
+    private Button HelpandSupportButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -18,6 +23,14 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
 
         logOutButton = findViewById(R.id.LogOutButton);
+
+        PaymentPreferencesButton = findViewById(R.id.PaymentPreferencesButton);
+
+        TransactionHistoryButton = findViewById(R.id.TransactionHistoryButton);
+
+        AccountInformationButton = findViewById(R.id.AccountInformationButton);
+
+        HelpandSupportButton = findViewById(R.id.HelpandSupportButton);
 
 
 
@@ -31,6 +44,52 @@ public class SettingsActivity extends AppCompatActivity {
             }
 
         });
+
+        PaymentPreferencesButton.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(SettingsActivity.this, PaymentPreferencesActivity.class);
+                startActivity(intent);
+            }
+
+        });
+
+        TransactionHistoryButton.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(SettingsActivity.this, TransactionHistoryActivity.class);
+                startActivity(intent);
+            }
+
+        });
+
+        AccountInformationButton.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(SettingsActivity.this, AccountInformation.class);
+                startActivity(intent);
+            }
+
+        });
+
+        HelpandSupportButton.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(SettingsActivity.this, HelpandSupportActivity.class);
+                startActivity(intent);
+            }
+
+        });
+
+
 
     }
 }
