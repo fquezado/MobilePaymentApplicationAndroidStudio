@@ -17,18 +17,21 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="16dp"
             android:text="Settings"
-            android:textSize="24sp" />
+            android:textColor="@color/black"
+            android:textSize="34sp" />
 
         <Button
             android:id="@+id/AccountInformationButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/teal_700"
             android:text="Account Information" />
 
         <Button
             android:id="@+id/TransactionHistoryButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/teal_700"
             android:text="Transaction History" />
 
         <Button
@@ -36,12 +39,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/teal_700"
             android:text="Payment Preferences" />
 
         <Button
             android:id="@+id/HelpandSupportButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/teal_700"
             android:text="Help and Support" />
 
         <Button
@@ -49,6 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/teal_700"
             android:text="Log Out" />
 
 
