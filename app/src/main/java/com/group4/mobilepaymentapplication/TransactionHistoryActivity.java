@@ -25,11 +25,11 @@ public class TransactionHistoryActivity extends AppCompatActivity {
 //        ListView listView = findViewById(R.id.transactionListView);
 //        listView.setAdapter(adapter);
 
-        // Adding a back button
+        // Adding a back PayButtonMainPage
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        // Find the button and set a click listener to navigate back to the ProfileActivity
+        // Find the PayButtonMainPage and set a click listener to navigate back to the ProfileActivity
 //        findViewById(R.id.backButton).setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {

@@ -11,8 +11,10 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button goToPaymentButton;
+    private Button PayButtonMainPage;
     private TextView welcomeTextView;
+
+    private Button receiveButton;
     private UserPreferences userPreferences;
 
     private ImageButton settingsButton;
@@ -40,9 +42,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        goToPaymentButton = findViewById(R.id.goToPaymentButton);
+        PayButtonMainPage = findViewById(R.id.PayButtonMainPage);
 
         settingsButton = findViewById(R.id.settingsButton);
+
+        receiveButton = findViewById(R.id.ReceiveButtonMainPage);
 
 
 
@@ -55,10 +59,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        goToPaymentButton.setOnClickListener(new View.OnClickListener() {
+        receiveButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(MainActivity.this, ReceiveActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        PayButtonMainPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, AddPaymentActivity.class);
+                Intent intent = new Intent(MainActivity.this, PayActivity.class);
                 startActivity(intent);
             }
         });
