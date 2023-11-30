@@ -13,9 +13,25 @@
         android:layout_marginStart="160dp"
         android:layout_marginTop="76dp"
         android:layout_marginEnd="163dp"
-        android:layout_marginBottom="607dp"
+        android:layout_marginBottom="300dp"
         android:text="pay"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/PayPageHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="175dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="181dp"
+        android:layout_marginBottom="160dp"
+        android:text="Pay"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

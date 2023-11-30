@@ -53,6 +53,7 @@
             android:id="@+id/saveCreditInfoButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/teal_700"
             android:text="Save Credit Info" />
 
     </LinearLayout>
