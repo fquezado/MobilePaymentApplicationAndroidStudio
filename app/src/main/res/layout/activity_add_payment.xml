@@ -19,13 +19,12 @@
             android:layout_marginBottom="16dp"
             android:text="Select Payment Method"
             android:textColor="@color/black"
-            android:textSize="24sp" />
+            android:textSize="34sp" />
 
         <Button
             android:id="@+id/addCreditButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
             android:backgroundTint="@color/teal_700"
             android:text="Credit" />
 
@@ -33,7 +32,6 @@
             android:id="@+id/addDebitButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
             android:backgroundTint="@color/teal_700"
             android:text="Debit" />
 
@@ -41,7 +39,6 @@
             android:id="@+id/addBankAccountButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
             android:backgroundTint="@color/teal_700"
             android:text="Bank Account" />
 
