@@ -72,7 +72,7 @@ M04-A03 Two Implemented Use Cases Integrated with First Usecase + Login/Authenti
 | 2              | Claudio          | 16                                 |                                     
 | 3              | Haojie           | 17                                 |                                     
 | 4              | Muhab            | 17                                 |                                       
-| 5              | Vish             | 16                                 |                          
+| 5              | Vish             | 16                                 | Added database, PaymentPreferences activity, ExistingCards recyclerView.                         
 | 6              | Fernando         | 20                                 |                                    
 
 
