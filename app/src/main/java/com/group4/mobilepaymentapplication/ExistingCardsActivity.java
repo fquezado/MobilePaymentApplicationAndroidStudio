@@ -18,7 +18,7 @@ public class ExistingCardsActivity extends AppCompatActivity {
 
     private ArrayList<PaymentCard> cardList;
     private RecyclerView recyclerView;
-    private Button backButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,14 +30,6 @@ public class ExistingCardsActivity extends AppCompatActivity {
         cardList = db.getAllCards();
         setAdapter();
 
-        backButton = findViewById(R.id.backButtonRecyclerView);
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ExistingCardsActivity.this, PaymentPreferencesActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
     private void setAdapter() {
