@@ -1,21 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:elevation="4dp">
 
-    <TextView
-        android:id="@+id/textCardNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Card Number: " />
+    <ImageView
+        android:id="@+id/cardImage"
+        android:layout_width="81dp"
+        android:layout_height="85dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/paymentcardimage" />
 
-    <TextView
-        android:id="@+id/textCardHolderName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cardholder Name: " />
+    <LinearLayout
+        android:layout_width="317dp"
+        android:layout_height="88dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@id/cardImage"
+        android:orientation="vertical">
 
-    <!-- Add more TextViews for other card details if needed -->
-</LinearLayout>
+        <TextView
+            android:id="@+id/textCardNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Card Number: "
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textCardHolderName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Cardholder Name: "
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <!-- Add more TextViews for other card details if needed -->
+
+    </LinearLayout>
+</RelativeLayout>

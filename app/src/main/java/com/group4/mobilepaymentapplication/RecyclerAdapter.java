@@ -13,24 +13,47 @@ import java.util.ArrayList;
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> {
 
     private ArrayList<PaymentCard> cardList;
+    private OnItemClickListener mListener;
 
-    public RecyclerAdapter(ArrayList<PaymentCard> cardList)
-    {
+    // Interface for click events
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+
+    // Method to set the click listener
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mListener = listener;
+    }
+
+    // Constructor
+    public RecyclerAdapter(ArrayList<PaymentCard> cardList) {
         this.cardList = cardList;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    // ViewHolder class
+    public class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView nameTxt;
         private TextView numberTxt;
 
-        public MyViewHolder(final View view)
-        {
-            super (view);
+        public MyViewHolder(final View view) {
+            super(view);
             nameTxt = view.findViewById(R.id.textCardHolderName);
             numberTxt = view.findViewById(R.id.textCardNumber);
+
+            // Set the click listener for the itemView
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mListener != null) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            mListener.onItemClick(position);
+                        }
+                    }
+                }
+            });
         }
     }
-
 
     @NonNull
     @Override
@@ -41,11 +64,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerAdapter.MyViewHolder holder, int position) {
-        String number = cardList.get(position).getCardNumber();
-        String name = cardList.get(position).getName();
+        String number = "Card Number: " + cardList.get(position).getCardNumber();
+        String name = "Card Name: " + cardList.get(position).getName();
         holder.numberTxt.setText(number);
         holder.nameTxt.setText(name);
-
     }
 
     @Override
