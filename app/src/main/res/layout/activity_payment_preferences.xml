@@ -7,17 +7,43 @@
     tools:context=".PaymentPreferencesActivity">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewPaymentPreferences"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="135dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="45dp"
-        android:layout_marginBottom="551dp"
         android:text="Payment Preferences"
         android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewPaymentPreferences">
+
+        <Button
+            android:id="@+id/addPaymentMethod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Payment Method" />
+
+        <Button
+            android:id="@+id/deletePaymentMethod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delete Payment Method" />
+
+        <Button
+            android:id="@+id/viewPaymentMethods"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Payment Methods" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

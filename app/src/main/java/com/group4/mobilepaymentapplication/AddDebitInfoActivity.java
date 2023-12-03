@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -41,14 +42,31 @@ public class AddDebitInfoActivity extends AppCompatActivity {
                 EditText cardHolderNameEditText = findViewById(R.id.debitCardHolderNameEditText);
                 EditText expirationDateEditText = findViewById(R.id.debitExpirationDateEditText);
                 EditText cvvEditText = findViewById(R.id.debitCVVEditText);
+                String cardNumber = cardNumberEditText.getText().toString();
+                String cardName = cardHolderNameEditText.getText().toString();
+                String expiryDate = expirationDateEditText.getText().toString();
+                String cvv = cvvEditText.getText().toString();
+
+                if (cardNumber.isEmpty() || cardName.isEmpty() || expiryDate.isEmpty() || cvv.isEmpty())
+                {
+                    Toast.makeText(AddDebitInfoActivity.this, "Fill all fields!!", Toast.LENGTH_SHORT).show();
+                }
+                else if (cardNumber.length() != 16)
+                {
+                    Toast.makeText(AddDebitInfoActivity.this, "Enter a valid card Number", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    paymentCard = new PaymentCard(cardHolderNameEditText.getText().toString(), cardNumberEditText.getText().toString(),
+                            expirationDateEditText.getText().toString(), cvvEditText.getText().toString());
+
+                    db.addCard(paymentCard);
+                    Intent intent = new Intent(AddDebitInfoActivity.this, ExistingCardsActivity.class);
+                    startActivity(intent);
+                }
 
 
-                paymentCard = new PaymentCard(cardHolderNameEditText.getText().toString(), cardNumberEditText.getText().toString(),
-                        expirationDateEditText.getText().toString(), cvvEditText.getText().toString());
 
-                db.addCard(paymentCard);
-                Intent intent = new Intent(AddDebitInfoActivity.this, ExistingCardsActivity.class);
-                startActivity(intent);
             }
         });
     }
