@@ -41,8 +41,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerAdapter.MyViewHolder holder, int position) {
-        String number = cardList.get(position).getCardNumber();
-        String name = cardList.get(position).getName();
+        String number = "Card Number: " + cardList.get(position).getCardNumber();
+        String name = "Card Name: " + cardList.get(position).getName();
         holder.numberTxt.setText(number);
         holder.nameTxt.setText(name);
 

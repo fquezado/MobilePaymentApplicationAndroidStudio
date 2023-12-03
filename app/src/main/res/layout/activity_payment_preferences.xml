@@ -20,4 +20,31 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="549dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="181dp">
+
+        <Button
+            android:id="@+id/addPaymentMethod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Payment Method" />
+
+        <Button
+            android:id="@+id/deletePaymentMethod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delete Payment Method" />
+
+        <Button
+            android:id="@+id/viewPaymentMethods"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Payment Methods" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
