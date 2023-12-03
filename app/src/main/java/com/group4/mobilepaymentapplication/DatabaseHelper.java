@@ -52,6 +52,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void deleteCard(String cardNumber) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_CARDS, KEY_CARD_NUMBER + " = ?", new String[] { cardNumber });
+        db.close();
+    }
+
     ArrayList<PaymentCard> getAllCards() {
         ArrayList<PaymentCard> cardList = new ArrayList<>();
         String selectQuery = "SELECT  * FROM " + TABLE_CARDS;

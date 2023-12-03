@@ -10,9 +10,7 @@ import android.widget.Button;
 public class PaymentPreferencesActivity extends AppCompatActivity {
 
     private Button addPaymentMethod;
-
     private Button removePaymentMethod;
-
     private Button viewPaymentMethods;
 
     @Override
@@ -21,15 +19,21 @@ public class PaymentPreferencesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_payment_preferences);
 
         addPaymentMethod = findViewById(R.id.addPaymentMethod);
-
         removePaymentMethod = findViewById(R.id.deletePaymentMethod);
-
         viewPaymentMethods = findViewById(R.id.viewPaymentMethods);
 
         addPaymentMethod.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PaymentPreferencesActivity.this, AddPaymentActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        removePaymentMethod.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PaymentPreferencesActivity.this, ExistingCardsActivity.class);
                 startActivity(intent);
             }
         });
@@ -41,6 +45,5 @@ public class PaymentPreferencesActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 }
