@@ -64,6 +64,15 @@ Benefits:
 Object-Oriented Design Pattern - 
 User Interface Pattern - 
 
-Integration Within Application:
+M04-A03 Two Implemented Use Cases Integrated with First Usecase + Login/Authentication Implementation with Clean, Refactored Code
 
-Benefits:
+| Team-Member ID | Team-Member Name | % Efforts in Particular Assignment | Brief of Efforts in the Tasks Contribution |   |
+|----------------|------------------|------------------------------------|--------------------------------------------|---|
+| 1              | Luke             | 17                                 |
+| 2              | Claudio          | 16                                 | Created profile screen                                    
+| 3              | Haojie           | 17                                 |                                     
+| 4              | Muhab            | 17                                 | Help and Support use case with ScrollView                                      
+| 5              | Vish             | 16                                 | Added database, PaymentPreferences activity, ExistingCards recyclerView.                         
+| 6              | Fernando         | 20                                 |                                    
+
+

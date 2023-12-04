@@ -16,11 +16,6 @@
 
         </androidx.recyclerview.widget.RecyclerView>
 
-        <Button
-            android:id="@+id/backButtonRecyclerView"
-            android:layout_width="216dp"
-            android:layout_height="wrap_content"
-            android:text="Back" />
     </LinearLayout>
 
 

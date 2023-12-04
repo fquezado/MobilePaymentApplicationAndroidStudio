@@ -33,7 +33,7 @@ public class PaymentPreferencesActivity extends AppCompatActivity {
         removePaymentMethod.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PaymentPreferencesActivity.this, ExistingCardsActivity.class);
+                Intent intent = new Intent(PaymentPreferencesActivity.this, ExistingPaymentsActivity.class);
                 startActivity(intent);
             }
         });
@@ -41,7 +41,7 @@ public class PaymentPreferencesActivity extends AppCompatActivity {
         viewPaymentMethods.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PaymentPreferencesActivity.this, ExistingCardsActivity.class);
+                Intent intent = new Intent(PaymentPreferencesActivity.this, ExistingPaymentsActivity.class);
                 startActivity(intent);
             }
         });

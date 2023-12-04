@@ -17,9 +17,9 @@ public class AddCreditInfoActivity extends AppCompatActivity {
     private String creditCardInfo;
     private Button creditButton;
 
-    private PaymentCard paymentCard;
+    private CreditCard creditCard;
 
-    private ArrayList<PaymentCard> cardList;
+    private ArrayList<CreditCard> cardList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,10 +53,10 @@ public class AddCreditInfoActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    paymentCard = new PaymentCard(cardHolderNameEditText.getText().toString(), cardNumberEditText.getText().toString(),
+                    creditCard = new CreditCard(cardHolderNameEditText.getText().toString(), cardNumberEditText.getText().toString(),
                             expirationDateEditText.getText().toString(), cvvEditText.getText().toString());
-                    db.addCard(paymentCard);
-                    Intent intent = new Intent(AddCreditInfoActivity.this, ExistingCardsActivity.class);
+                    db.addCard(creditCard);
+                    Intent intent = new Intent(AddCreditInfoActivity.this, ExistingPaymentsActivity.class);
                     startActivity(intent);
                 }
 

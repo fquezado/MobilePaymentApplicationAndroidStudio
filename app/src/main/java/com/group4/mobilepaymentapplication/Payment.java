@@ -4,8 +4,8 @@ public interface Payment {
     void processPayment();
 }
 
-// CreditCard class implementing the Payment interface
-class CreditCard implements Payment {
+// CreditCardInfo class implementing the Payment interface
+class CreditCardInfo implements Payment {
     @Override
     public void processPayment() {
         System.out.println("Processing Credit Card Payment");
@@ -21,7 +21,7 @@ class DebitCard implements Payment {
 }
 
 // BankAccount class implementing the Payment interface
-class BankAccount implements Payment {
+class BankAccountInfo implements Payment {
     @Override
     public void processPayment() {
         System.out.println("Processing Bank Account Payment");
@@ -37,7 +37,7 @@ interface PaymentFactory {
 class CreditCardFactory implements PaymentFactory {
     @Override
     public Payment createPayment() {
-        return new CreditCard();
+        return new CreditCardInfo();
     }
 }
 
@@ -53,7 +53,7 @@ class DebitCardFactory implements PaymentFactory {
 class BankAccountFactory implements PaymentFactory {
     @Override
     public Payment createPayment() {
-        return new BankAccount();
+        return new BankAccountInfo();
     }
 }
 

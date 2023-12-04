@@ -15,8 +15,6 @@ public class AddPaymentActivity extends AppCompatActivity {
     private Button addDebitButton;
     private Button addBankAccountButton;
 
-    private Button backButton;
-
 
 
 
@@ -57,29 +55,3 @@ public class AddPaymentActivity extends AppCompatActivity {
 
     }
 }
-/*
-
-
-        Button bankButton = findViewById(R.id.saveBankInfoButton);
-
-        bankButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                saveBankInfo();
-            }
-        });
-
-
-    private void saveBankInfo() {
-        EditText accountHolderNameEditText = findViewById(R.id.bankAccountHolderNameEditText);
-        EditText accountNumberEditText = findViewById(R.id.bankAccountNumberEditText);
-        EditText routingNumberEditText = findViewById(R.id.bankRoutingNumberEditText);
-
-        bankAccountInfo = "Account Holder Name: " + accountHolderNameEditText.getText().toString() +
-                "\nAccount Number: " + accountNumberEditText.getText().toString() +
-                "\nRouting Number: " + routingNumberEditText.getText().toString();
-
-    }
-
-
- */

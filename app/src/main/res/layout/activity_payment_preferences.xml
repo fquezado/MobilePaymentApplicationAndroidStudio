@@ -6,43 +6,44 @@
     android:layout_height="match_parent"
     tools:context=".PaymentPreferencesActivity">
 
-    <TextView
-        android:id="@+id/textViewPaymentPreferences"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="45dp"
-        android:text="Payment Preferences"
-        android:textSize="34sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewPaymentPreferences">
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textViewPaymentPreferences"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            android:text="Payment Preferences"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="34sp" />
 
         <Button
             android:id="@+id/addPaymentMethod"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add Payment Method" />
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="@color/teal_700"
+            android:text="Add Payment Method"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/deletePaymentMethod"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/teal_700"
             android:text="Delete Payment Method" />
 
         <Button
             android:id="@+id/viewPaymentMethods"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/teal_700"
             android:text="View Payment Methods" />
     </LinearLayout>
 
