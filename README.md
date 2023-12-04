@@ -61,8 +61,8 @@ Benefits:
 -Efficient sorting of transactions based on values such as transaction date, amount, or recipient
 #
 **Haojie Zhang:**
-Object-Oriented Design Pattern - 
-User Interface Pattern - 
+Object-Oriented Design Pattern 
+User Interface Pattern 
 
 M04-A03 Two Implemented Use Cases Integrated with First Usecase + Login/Authentication Implementation with Clean, Refactored Code
 
@@ -70,7 +70,7 @@ M04-A03 Two Implemented Use Cases Integrated with First Usecase + Login/Authenti
 |----------------|------------------|------------------------------------|--------------------------------------------|---|
 | 1              | Luke             | 17                                 |
 | 2              | Claudio          | 16                                 | Created profile screen                                    
-| 3              | Haojie           | 17                                 |                                     
+| 3              | Haojie           | 17                                 | Implemented account information screen, updated user register and user preference                               
 | 4              | Muhab            | 17                                 | Help and Support use case with ScrollView                                      
 | 5              | Vish             | 16                                 | Added database, PaymentPreferences activity, ExistingCards recyclerView.                         
 | 6              | Fernando         | 20                                 |                                    
