@@ -7,14 +7,14 @@
     tools:context=".AccountInformation">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/Profile_Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="109dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="110dp"
         android:layout_marginBottom="670dp"
-        android:text="Account info"
+        android:text="Profile"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="34sp"
@@ -22,4 +22,62 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/total_balance"
+        android:layout_width="156dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="127dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="TimeWise balance"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/account_email" />
+
+    <EditText
+        android:id="@+id/account_email"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Account Email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="10dp"
+        android:ems="10"
+        android:hint="Account Name"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_pic" />
+
+    <ImageView
+        android:id="@+id/profile_pic"
+        android:layout_width="86dp"
+        android:layout_height="108dp"
+        android:layout_marginTop="7dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Profile_Title"
+        app:srcCompat="@drawable/profile_pic1" />
+
+    <Button
+        android:id="@+id/home_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/teal_700"
+        android:text="Home"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/total_balance" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
