@@ -73,6 +73,6 @@ M04-A03 Two Implemented Use Cases Integrated with First Usecase + Login/Authenti
 | 3              | Haojie           | 17                                 |                                     
 | 4              | Muhab            | 17                                 | Help and Support use case with ScrollView                                      
 | 5              | Vish             | 16                                 | Added database, PaymentPreferences activity, ExistingCards recyclerView.                         
-| 6              | Fernando         | 20                                 | Revamped UI completely, completed navigation between screens, fixed database                                   
+| 6              | Fernando         | 20                                 | Revamped UI completely, completed navigation between screens, fixed database, and PayActivity                                  
 
 
