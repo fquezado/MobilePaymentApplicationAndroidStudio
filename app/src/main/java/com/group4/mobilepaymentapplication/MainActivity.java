@@ -20,6 +20,23 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton settingsButton;
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.settings_menu, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int menuId = item.getItemId();
+
+        if (menuId == R.id.settings) {
+            Intent homeIntent = new Intent(this, SettingsActivity.class);
+            startActivity(homeIntent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
