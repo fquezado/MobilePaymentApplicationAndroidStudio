@@ -5,36 +5,36 @@ import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
 
-public class PaymentCard implements Parcelable {
+public class CreditCard implements Parcelable {
 
     String name;
     String cardNumber;
     String expiryDate;
     String ccvCode;
 
-    public PaymentCard(String name, String cardNumber, String expiryDate, String ccvCode) {
+    public CreditCard(String name, String cardNumber, String expiryDate, String ccvCode) {
         this.name = name;
         this.cardNumber = cardNumber;
         this.expiryDate = expiryDate;
         this.ccvCode = ccvCode;
     }
 
-    protected PaymentCard(Parcel in) {
+    protected CreditCard(Parcel in) {
         name = in.readString();
         cardNumber = in.readString();
         expiryDate = in.readString();
         ccvCode = in.readString();
     }
 
-    public static final Creator<PaymentCard> CREATOR = new Creator<PaymentCard>() {
+    public static final Creator<CreditCard> CREATOR = new Creator<CreditCard>() {
         @Override
-        public PaymentCard createFromParcel(Parcel in) {
-            return new PaymentCard(in);
+        public CreditCard createFromParcel(Parcel in) {
+            return new CreditCard(in);
         }
 
         @Override
-        public PaymentCard[] newArray(int size) {
-            return new PaymentCard[size];
+        public CreditCard[] newArray(int size) {
+            return new CreditCard[size];
         }
     };
 

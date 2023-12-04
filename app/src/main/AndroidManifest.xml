@@ -55,10 +55,13 @@
             android:name=".SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".ExistingCardsActivity"
+            android:name=".ExistingPaymentsActivity"
             android:exported="false" />
         <activity
-            android:name=".PaymentCard"
+            android:name=".CreditCard"
+            android:exported="false" />
+        <activity
+            android:name=".BankAccount"
             android:exported="false" />
         <activity
             android:name=".RecyclerAdapter"

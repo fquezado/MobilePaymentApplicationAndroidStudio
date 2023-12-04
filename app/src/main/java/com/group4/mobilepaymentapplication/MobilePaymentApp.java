@@ -3,7 +3,7 @@ package com.group4.mobilepaymentapplication;
 // Client code
 public class MobilePaymentApp {
     public static void main(String[] args) {
-        // Create CreditCard payment
+        // Create CreditCardInfo payment
         PaymentFactory creditCardFactory = new CreditCardFactory();
         Payment creditCardPayment = creditCardFactory.createPayment();
         creditCardPayment.processPayment();

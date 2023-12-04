@@ -1,9 +1,6 @@
 package com.group4.mobilepaymentapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,9 +16,9 @@ public class AddDebitInfoActivity extends AppCompatActivity {
     private String debitCardInfo;
     private Button debitButton;
 
-    private PaymentCard paymentCard;
+    private CreditCard creditCard;
 
-    private ArrayList<PaymentCard> cardList;
+    private ArrayList<CreditCard> cardList;
 
 
     @Override
@@ -57,11 +54,11 @@ public class AddDebitInfoActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    paymentCard = new PaymentCard(cardHolderNameEditText.getText().toString(), cardNumberEditText.getText().toString(),
+                    creditCard = new CreditCard(cardHolderNameEditText.getText().toString(), cardNumberEditText.getText().toString(),
                             expirationDateEditText.getText().toString(), cvvEditText.getText().toString());
 
-                    db.addCard(paymentCard);
-                    Intent intent = new Intent(AddDebitInfoActivity.this, ExistingCardsActivity.class);
+                    db.addCard(creditCard);
+                    Intent intent = new Intent(AddDebitInfoActivity.this, ExistingPaymentsActivity.class);
                     startActivity(intent);
                 }
 
