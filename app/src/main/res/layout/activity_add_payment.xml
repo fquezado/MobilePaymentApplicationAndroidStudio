@@ -43,7 +43,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:backgroundTint="@color/teal_700"
-            android:text="Bank Account" />
+            android:text="Bank Account"
+            android:visibility="gone" />
 
     </LinearLayout>
 
