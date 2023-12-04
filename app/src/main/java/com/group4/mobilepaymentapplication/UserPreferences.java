@@ -10,21 +10,24 @@ public class UserPreferences {
         sharedPreferences = context.getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
     }
 
-    // this is where you set the password for the user account and saves it
-    public void saveUser(String name, String email, String password) {
+    // Modified to include the phone number
+    public void saveUser(String name, String email, String password, String phone) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("NAME", name);
         editor.putString("EMAIL", email);
         editor.putString("PASSWORD", password);
+        editor.putString("PHONE", phone); // Add this line
         editor.apply();
     }
 
+    // Modified to include the phone number
     public String[] getUser() {
         String name = sharedPreferences.getString("NAME", null);
         String email = sharedPreferences.getString("EMAIL", null);
         String password = sharedPreferences.getString("PASSWORD", null);
-        return new String[]{name, email, password};
+        String phone = sharedPreferences.getString("PHONE", null); // Add this line
+        return new String[]{name, email, password, phone}; // Include phone in the return
     }
-
 }
+
 

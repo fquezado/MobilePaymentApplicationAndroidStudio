@@ -1,83 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AccountInformation">
+    android:orientation="vertical"
+    android:padding="16dp">
 
+    <!-- Heading for Account Information -->
     <TextView
-        android:id="@+id/Profile_Title"
-        android:layout_width="wrap_content"
+        android:id="@+id/accountInfoHeading"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="109dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="110dp"
-        android:layout_marginBottom="670dp"
-        android:text="Profile"
-        android:textAlignment="center"
+        android:text="Account Information"
+        android:textSize="24sp"
         android:textColor="@color/black"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:gravity="center"
+        android:layout_marginBottom="24dp" />
 
-    <EditText
-        android:id="@+id/total_balance"
-        android:layout_width="156dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="127dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:hint="TimeWise balance"
-        android:inputType="numberDecimal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/account_email" />
-
-    <EditText
-        android:id="@+id/account_email"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:hint="Account Email"
-        android:inputType="textEmailAddress"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginStart="10dp"
-        android:ems="10"
-        android:hint="Account Name"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_pic" />
-
-    <ImageView
-        android:id="@+id/profile_pic"
-        android:layout_width="86dp"
-        android:layout_height="108dp"
-        android:layout_marginTop="7dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Profile_Title"
-        app:srcCompat="@drawable/profile_pic1" />
-
-    <Button
-        android:id="@+id/home_button"
-        android:layout_width="wrap_content"
+    <!-- Display Name -->
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/teal_700"
-        android:text="Home"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/total_balance" />
+        android:text="Name: "
+        android:textSize="18sp"
+        android:textColor="@color/black" />
 
+    <!-- Display Email -->
+    <TextView
+        android:id="@+id/emailTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email: "
+        android:textSize="18sp"
+        android:textColor="@color/black" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Display Phone Number -->
+    <TextView
+        android:id="@+id/phoneTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Phone: "
+        android:textSize="18sp"
+        android:textColor="@color/black" />
+
+    <!-- Other UI elements as needed... -->
+
+</LinearLayout>

@@ -24,6 +24,15 @@
         android:textColor="@color/black" />
 
     <EditText
+        android:id="@+id/phoneEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Phone Number"
+        android:inputType="phone"
+        android:textColor="@color/black" />
+
+    <EditText
         android:id="@+id/passwordEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

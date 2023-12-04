@@ -15,7 +15,7 @@ Implementation of Mobile Payment App through android studio
 |----------------|------------------|------------------------------------|--------------------------------------------|---|
 | 1              | Luke             | 17                                 | Created XML pages for each Payment Method screen
 | 2              | Claudio          | 16                                 | Started implentation of the transaction history page                                         
-| 3              | Haojie           | xxx                                | User Registration Activity implementations with XML page                                        
+| 3              | Haojie           | 15                                 | User Registration Activity implementations with XML page                                        
 | 4              | Muhab            | 16                                 | Design Patterns Implementations and Navigation Functionality                                         
 | 5              | Vish             | 16                                 | Design Pattern and XML Page Implementation                                      
 | 6              | Fernando         | 20                                 | Creating framwork for entire app and implement navigation for app                                        
@@ -61,8 +61,8 @@ Benefits:
 -Efficient sorting of transactions based on values such as transaction date, amount, or recipient
 #
 **Haojie Zhang:**
-Object-Oriented Design Pattern - 
-User Interface Pattern - 
+Object-Oriented Design Pattern 
+User Interface Pattern 
 
 M04-A03 Two Implemented Use Cases Integrated with First Usecase + Login/Authentication Implementation with Clean, Refactored Code
 
@@ -70,7 +70,7 @@ M04-A03 Two Implemented Use Cases Integrated with First Usecase + Login/Authenti
 |----------------|------------------|------------------------------------|--------------------------------------------|---|
 | 1              | Luke             | 17                                 |
 | 2              | Claudio          | 16                                 | Created profile screen                                    
-| 3              | Haojie           | 17                                 |                                     
+| 3              | Haojie           | 17                                 | Implemented account information screen, updated user register and user preference                               
 | 4              | Muhab            | 17                                 | Help and Support use case with ScrollView                                      
 | 5              | Vish             | 16                                 | Added database, PaymentPreferences activity, ExistingCards recyclerView.                         
 | 6              | Fernando         | 20                                 | Revamped UI completely, completed navigation between screens, fixed database, and PayActivity                                  
