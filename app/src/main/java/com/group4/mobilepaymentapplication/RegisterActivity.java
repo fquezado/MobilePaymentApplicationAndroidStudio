@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private EditText nameEditText, emailEditText, passwordEditText;
+    private EditText nameEditText, emailEditText, passwordEditText, phoneEditText;
     private Button registerButton;
     private UserPreferences userPreferences;
 
@@ -22,6 +22,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         nameEditText = findViewById(R.id.nameEditText);
         emailEditText = findViewById(R.id.emailEditText);
+        phoneEditText = findViewById(R.id.phoneEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         registerButton = findViewById(R.id.registerButton);
         userPreferences = new UserPreferences(this);
@@ -31,12 +32,13 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String name = nameEditText.getText().toString();
                 String email = emailEditText.getText().toString();
+                String phone = phoneEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
 
                 if (name.isEmpty() || email.isEmpty() || password.isEmpty()) {
                     Toast.makeText(RegisterActivity.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
                 } else {
-                    userPreferences.saveUser(name, email, password);
+                    userPreferences.saveUser(name, email, phone, password);
                     Toast.makeText(RegisterActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
                     // Optionally navigate to another activity
                     Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
