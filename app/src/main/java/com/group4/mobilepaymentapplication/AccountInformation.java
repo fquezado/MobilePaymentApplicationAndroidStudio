@@ -11,7 +11,6 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class AccountInformation extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -31,4 +30,5 @@ public class AccountInformation extends AppCompatActivity {
             }
         });
     }
+
 }
