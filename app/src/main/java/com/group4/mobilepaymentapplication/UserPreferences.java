@@ -11,12 +11,11 @@ public class UserPreferences {
     }
 
     // Modified to include the phone number
-    public void saveUser(String name, String email, String password, String phone) {
+    public void saveUser(String name, String email, String password) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("NAME", name);
         editor.putString("EMAIL", email);
         editor.putString("PASSWORD", password);
-        editor.putString("PHONE", phone); // Add this line
         editor.apply();
     }
 
@@ -25,8 +24,7 @@ public class UserPreferences {
         String name = sharedPreferences.getString("NAME", null);
         String email = sharedPreferences.getString("EMAIL", null);
         String password = sharedPreferences.getString("PASSWORD", null);
-        String phone = sharedPreferences.getString("PHONE", null); // Add this line
-        return new String[]{name, email, password, phone}; // Include phone in the return
+        return new String[]{name, email, password}; // Include phone in the return
     }
 }
 
