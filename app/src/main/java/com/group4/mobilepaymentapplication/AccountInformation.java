@@ -11,9 +11,11 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class AccountInformation extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_information);
         Button homeButton = findViewById(R.id.home_button);
@@ -28,4 +30,5 @@ public class AccountInformation extends AppCompatActivity {
             }
         });
     }
+
 }
