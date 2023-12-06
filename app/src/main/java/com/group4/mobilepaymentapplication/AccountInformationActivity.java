@@ -4,13 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class AccountInformation extends AppCompatActivity {
+public class AccountInformationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -23,7 +20,7 @@ public class AccountInformation extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Create an Intent to start the MainActivity
-                Intent intent = new Intent(AccountInformation.this, MainActivity.class);
+                Intent intent = new Intent(AccountInformationActivity.this, MainActivity.class);
 
                 // Start the MainActivity
                 startActivity(intent);

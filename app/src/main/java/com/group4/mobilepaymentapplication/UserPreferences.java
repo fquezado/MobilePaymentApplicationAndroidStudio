@@ -24,7 +24,7 @@ public class UserPreferences {
         String name = sharedPreferences.getString("NAME", null);
         String email = sharedPreferences.getString("EMAIL", null);
         String password = sharedPreferences.getString("PASSWORD", null);
-        return new String[]{name, email, password}; // Include phone in the return
+        return new String[]{name, email, password};
     }
 }
 

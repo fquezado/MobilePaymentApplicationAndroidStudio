@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
         settingsButton = findViewById(R.id.settingsButton);
 
-        receiveButton = findViewById(R.id.ReceiveButtonMainPage);
+        receiveButton = findViewById(R.id.RequestButtonMainPage);
 
 
 
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                Intent intent = new Intent(MainActivity.this, ReceiveActivity.class);
+                Intent intent = new Intent(MainActivity.this, RequestActivity.class);
                 startActivity(intent);
             }
         });
