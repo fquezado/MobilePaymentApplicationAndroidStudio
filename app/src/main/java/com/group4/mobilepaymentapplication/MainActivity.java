@@ -43,15 +43,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         userPreferences = new UserPreferences(this);
 
         // Initialize your TextView
         welcomeTextView = findViewById(R.id.HompageText);
 
         // Retrieve user info
-        String[] userInfo = userPreferences.getUser();
-        String userName = userInfo[0]; // Assuming the first element is the name
+        String userName = userPreferences.getUserName();
 
         // Check if userName is not null
         if (userName != null && !userName.isEmpty()) {
@@ -61,11 +59,12 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+
         PayButtonMainPage = findViewById(R.id.PayButtonMainPage);
 
         settingsButton = findViewById(R.id.settingsButton);
 
-        receiveButton = findViewById(R.id.ReceiveButtonMainPage);
+        receiveButton = findViewById(R.id.RequestButtonMainPage);
 
 
 
@@ -82,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                Intent intent = new Intent(MainActivity.this, ReceiveActivity.class);
+                Intent intent = new Intent(MainActivity.this, RequestActivity.class);
                 startActivity(intent);
             }
         });

@@ -7,16 +7,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PayActivity extends AppCompatActivity {
+public class RequestActivity extends AppCompatActivity {
 
-    private Spinner paymentMethodSpinner;
+    private Spinner requestMethodSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pay); // Adjust this if your layout name is different
+        setContentView(R.layout.activity_request);
 
-        paymentMethodSpinner = findViewById(R.id.payment_method_spinner);
+
+        requestMethodSpinner = findViewById(R.id.request_method_spinner);
         populatePaymentMethodSpinner();
     }
 
@@ -24,20 +25,21 @@ public class PayActivity extends AppCompatActivity {
         DatabaseHelper db = new DatabaseHelper(this);
         ArrayList<CreditCard> cards = db.getAllCards();
         ArrayList<BankAccount> bankAccounts = db.getAllBankAccounts();
-        List<String> paymentOptions = new ArrayList<>();
+        List<String> requestOptions = new ArrayList<>();
 
         for (CreditCard card : cards) {
-            // Format as needed, e.g., "Credit Card: [Card Number]"
-            paymentOptions.add("Credit/Debit Card: " + card.getCardNumber());
+            // format as needed
+            requestOptions.add("Credit/Debit Card: " + card.getCardNumber());
         }
 
         for (BankAccount account : bankAccounts) {
-            // Format as needed, e.g., "Bank Account: [Account Holder Name]"
-            paymentOptions.add("Bank Account: " + account.getAccountNumber());
+            // format as needed
+            requestOptions.add("Bank Account: " + account.getAccountNumber());
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, paymentOptions);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, requestOptions);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        paymentMethodSpinner.setAdapter(adapter);
+        requestMethodSpinner.setAdapter(adapter);
     }
+
 }
