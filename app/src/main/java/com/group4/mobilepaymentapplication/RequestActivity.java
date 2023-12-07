@@ -15,11 +15,23 @@ public class RequestActivity extends AppCompatActivity {
     private Spinner requestMethodSpinner;
 
 
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_request);
+
+        requestMethodSpinner = findViewById(R.id.request_method_spinner);
+        populatePaymentMethodSpinner();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar
         getMenuInflater().inflate(R.menu.settings_menu, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int menuId = item.getItemId();
@@ -32,16 +44,6 @@ public class RequestActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_request);
-
-
-        requestMethodSpinner = findViewById(R.id.request_method_spinner);
-        populatePaymentMethodSpinner();
-    }
-
     private void populatePaymentMethodSpinner() {
         DatabaseHelper db = new DatabaseHelper(this);
         ArrayList<CreditCard> cards = db.getAllCards();

@@ -16,10 +16,22 @@ public class PayActivity extends AppCompatActivity {
 
 
     @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_pay);
+
+
+        paymentMethodSpinner = findViewById(R.id.payment_method_spinner);
+        populatePaymentMethodSpinner();
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar
         getMenuInflater().inflate(R.menu.settings_menu, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int menuId = item.getItemId();
@@ -31,14 +43,6 @@ public class PayActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pay); // Adjust this if your layout name is different
-
-        paymentMethodSpinner = findViewById(R.id.payment_method_spinner);
-        populatePaymentMethodSpinner();
     }
 
     private void populatePaymentMethodSpinner() {

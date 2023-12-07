@@ -2,6 +2,8 @@ package com.group4.mobilepaymentapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -16,10 +18,10 @@ public class SettingsActivity extends AppCompatActivity {
     private Button HelpandSupportButton;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+
 
         logOutButton = findViewById(R.id.LogOutButton);
 
@@ -32,63 +34,55 @@ public class SettingsActivity extends AppCompatActivity {
         HelpandSupportButton = findViewById(R.id.HelpandSupportButton);
 
 
-
-        logOutButton.setOnClickListener(new View.OnClickListener(){
+        logOutButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 Intent intent = new Intent(SettingsActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
 
         });
 
-        PaymentPreferencesButton.setOnClickListener(new View.OnClickListener(){
+        PaymentPreferencesButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 Intent intent = new Intent(SettingsActivity.this, PaymentPreferencesActivity.class);
                 startActivity(intent);
             }
 
         });
 
-        TransactionHistoryButton.setOnClickListener(new View.OnClickListener(){
+        TransactionHistoryButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 Intent intent = new Intent(SettingsActivity.this, TransactionHistoryActivity.class);
                 startActivity(intent);
             }
 
         });
 
-        AccountInformationButton.setOnClickListener(new View.OnClickListener(){
+        AccountInformationButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 Intent intent = new Intent(SettingsActivity.this, AccountInformationActivity.class);
                 startActivity(intent);
             }
 
         });
 
-        HelpandSupportButton.setOnClickListener(new View.OnClickListener(){
+        HelpandSupportButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 Intent intent = new Intent(SettingsActivity.this, HelpandSupportActivity.class);
                 startActivity(intent);
             }
 
         });
-
-
-
     }
+
 }
