@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private EditText nameEditText, emailEditText, passwordEditText, phoneEditText;
+    private EditText nameEditText, emailEditText, passwordEditText;
     private Button registerButton;
     private UserPreferences userPreferences;
 

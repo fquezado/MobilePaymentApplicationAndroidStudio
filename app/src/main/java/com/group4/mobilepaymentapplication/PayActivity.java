@@ -28,7 +28,7 @@ public class PayActivity extends AppCompatActivity {
 
         for (CreditCard card : cards) {
             // Format as needed, e.g., "Credit Card: [Card Number]"
-            paymentOptions.add("Credit Card: " + card.getCardNumber());
+            paymentOptions.add("Credit/Debit Card: " + card.getCardNumber());
         }
 
         for (BankAccount account : bankAccounts) {

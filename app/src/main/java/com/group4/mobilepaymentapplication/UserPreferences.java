@@ -10,7 +10,6 @@ public class UserPreferences {
         sharedPreferences = context.getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
     }
 
-    // Modified to include the phone number
     public void saveUser(String name, String email, String password) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("NAME", name);
@@ -19,13 +18,15 @@ public class UserPreferences {
         editor.apply();
     }
 
-    // Modified to include the phone number
-    public String[] getUser() {
-        String name = sharedPreferences.getString("NAME", null);
-        String email = sharedPreferences.getString("EMAIL", null);
-        String password = sharedPreferences.getString("PASSWORD", null);
-        return new String[]{name, email, password};
+    public String getUserName() {
+        return sharedPreferences.getString("NAME", ""); // Default to empty string if not found
+    }
+
+    public String getUserEmail() {
+        return sharedPreferences.getString("EMAIL", ""); // Default to empty string if not found
+    }
+
+    public String getUserPassword() {
+        return sharedPreferences.getString("PASSWORD", ""); // Default to empty string if not found
     }
 }
-
-
