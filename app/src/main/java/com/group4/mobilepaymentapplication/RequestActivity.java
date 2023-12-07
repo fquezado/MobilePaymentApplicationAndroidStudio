@@ -1,6 +1,9 @@
 package com.group4.mobilepaymentapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +14,24 @@ public class RequestActivity extends AppCompatActivity {
 
     private Spinner requestMethodSpinner;
 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.settings_menu, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int menuId = item.getItemId();
+
+        if (menuId == R.id.settings) {
+            Intent homeIntent = new Intent(this, SettingsActivity.class);
+            startActivity(homeIntent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
