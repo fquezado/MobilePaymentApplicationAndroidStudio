@@ -29,7 +29,7 @@ public class AddDebitInfoActivity extends AppCompatActivity {
         debitButton = findViewById(R.id.saveDebitInfoButton);
 
         cardList = new ArrayList<>();
-        DatabaseHelper db = new DatabaseHelper(this);
+        PaymentOptionsDatabaseHelper db = new PaymentOptionsDatabaseHelper(this);
 
         debitButton.setOnClickListener(new View.OnClickListener() {
             @Override

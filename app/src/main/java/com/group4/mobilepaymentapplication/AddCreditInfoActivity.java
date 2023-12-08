@@ -29,7 +29,7 @@ public class AddCreditInfoActivity extends AppCompatActivity {
         Button creditButton = findViewById(R.id.saveCreditInfoButton);
 
         cardList = new ArrayList<>();
-        DatabaseHelper db = new DatabaseHelper(this);
+        PaymentOptionsDatabaseHelper db = new PaymentOptionsDatabaseHelper(this);
 
         creditButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -64,7 +64,7 @@
             android:name=".BankAccount"
             android:exported="false" />
         <activity
-            android:name=".RecyclerAdapter"
+            android:name=".PaymentOptionsRecyclerAdapter"
             android:exported="false" />
         <activity
             android:name=".SplashPageActivity"
