@@ -15,6 +15,7 @@ public class UserPreferences {
         editor.putString("NAME", name);
         editor.putString("EMAIL", email);
         editor.putString("PASSWORD", password);
+        //editor.putInt("ID", id);
         editor.apply();
     }
 
