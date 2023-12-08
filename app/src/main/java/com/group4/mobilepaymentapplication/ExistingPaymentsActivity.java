@@ -20,7 +20,7 @@ public class ExistingPaymentsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_existing_payment_methods);
 
         recyclerView = findViewById(R.id.recyclerCardView);
-        DatabaseHelper db = new DatabaseHelper(this);
+        PaymentOptionsDatabaseHelper db = new PaymentOptionsDatabaseHelper(this);
 
         // Combine CreditCard and BankAccount lists into one list
         items = new ArrayList<>();
@@ -31,8 +31,8 @@ public class ExistingPaymentsActivity extends AppCompatActivity {
     }
 
     private void setAdapter() {
-        RecyclerAdapter adapter = new RecyclerAdapter(items);
-        adapter.setOnItemClickListener(new RecyclerAdapter.OnItemClickListener() {
+        PaymentOptionsRecyclerAdapter adapter = new PaymentOptionsRecyclerAdapter(items);
+        adapter.setOnItemClickListener(new PaymentOptionsRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
                 showDeleteConfirmationDialog(position);
@@ -64,7 +64,7 @@ public class ExistingPaymentsActivity extends AppCompatActivity {
     }
 
     private void performDeletion(int position) {
-        DatabaseHelper db = new DatabaseHelper(this);
+        PaymentOptionsDatabaseHelper db = new PaymentOptionsDatabaseHelper(this);
         Object item = items.get(position);
 
         if (item instanceof CreditCard) {

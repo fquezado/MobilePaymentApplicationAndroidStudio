@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> {
+public class PaymentOptionsRecyclerAdapter extends RecyclerView.Adapter<PaymentOptionsRecyclerAdapter.MyViewHolder> {
 
     private ArrayList<Object> itemList;
     private OnItemClickListener mListener;
@@ -26,7 +26,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     }
 
     // Constructor
-    public RecyclerAdapter(ArrayList<Object> itemList) {
+    public PaymentOptionsRecyclerAdapter(ArrayList<Object> itemList) {
         this.itemList = itemList;
     }
 
@@ -57,13 +57,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 
     @NonNull
     @Override
-    public RecyclerAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public PaymentOptionsRecyclerAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_payment_card, parent, false);
         return new MyViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull PaymentOptionsRecyclerAdapter.MyViewHolder holder, int position) {
         Object item = itemList.get(position);
         if (item instanceof CreditCard) {
             CreditCard card = (CreditCard) item;

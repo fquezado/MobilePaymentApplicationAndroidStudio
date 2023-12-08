@@ -38,7 +38,7 @@ public class AddBankInfoActivity extends AppCompatActivity {
                     Toast.makeText(AddBankInfoActivity.this, "Enter a valid routing number", Toast.LENGTH_SHORT).show();
                 } else {
                     BankAccount account = new BankAccount(accountHolderName, accountNumber, routingNumber);
-                    DatabaseHelper db = new DatabaseHelper(AddBankInfoActivity.this);
+                    PaymentOptionsDatabaseHelper db = new PaymentOptionsDatabaseHelper(AddBankInfoActivity.this);
                     db.addBankAccount(account);
                     Toast.makeText(AddBankInfoActivity.this, "Bank account added successfully", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(AddBankInfoActivity.this, ExistingPaymentsActivity.class);
@@ -58,7 +58,7 @@ public class AddBankInfoActivity extends AppCompatActivity {
         String routingNumber = routingNumberEditText.getText().toString();
 
         BankAccount account = new BankAccount(accountHolderName, accountNumber, routingNumber);
-        DatabaseHelper db = new DatabaseHelper(this);
+        PaymentOptionsDatabaseHelper db = new PaymentOptionsDatabaseHelper(this);
         db.addBankAccount(account);
     }
 
