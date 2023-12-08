@@ -60,8 +60,6 @@ public class RequestActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        amount = -amount;
-
         // Now, you can use the 'amount' variable to save in the database
         TransactionHistoryDatabaseHelper dbHelper = new TransactionHistoryDatabaseHelper(this);
         dbHelper.addTransaction(new Transaction(String.valueOf(amount), paymentMethod, currentDate));
