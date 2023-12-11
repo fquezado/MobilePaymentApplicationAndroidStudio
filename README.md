@@ -7,7 +7,7 @@ Implementation of Mobile Payment App through android studio
 | 1              | Luke             |                                             |                               
 | 2              | Claudio          |                                             |                                            
 | 3              | Haojie           |                                             |                                                    
-| 4              | Muhab            |                                             |                                              
+| 4              | Muhab            | 17%                                         | Debugging and Code Testing                                             
 | 5              | Vish             |                                             |                                                 
 | 6              | Fernando         | 20%                                         | Made ability for multiple users, added user persistence with transaction history and payment methods, made user information save into JSON | 
 
