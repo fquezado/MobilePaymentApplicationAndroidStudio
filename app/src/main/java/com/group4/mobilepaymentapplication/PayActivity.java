@@ -20,10 +20,14 @@ public class PayActivity extends AppCompatActivity {
     private Spinner paymentMethodSpinner;
     private Button payButton;
 
+    private UserPreferences userPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pay);
+
+        userPreferences = new UserPreferences(this);
 
         // Initialize the payment method spinner
         paymentMethodSpinner = findViewById(R.id.payment_method_spinner);
@@ -60,7 +64,7 @@ public class PayActivity extends AppCompatActivity {
         amount = -amount;
 
         TransactionHistoryDatabaseHelper dbHelper = new TransactionHistoryDatabaseHelper(this);
-        dbHelper.addTransaction(new Transaction(String.valueOf(amount), paymentMethod, currentDate));
+        dbHelper.addTransaction(new Transaction(String.valueOf(amount), paymentMethod, currentDate), userPreferences.getCurrentUser().getId());
     }
 
     @Override
@@ -85,8 +89,8 @@ public class PayActivity extends AppCompatActivity {
 
     private void populatePaymentMethodSpinner() {
         PaymentOptionsDatabaseHelper db = new PaymentOptionsDatabaseHelper(this);
-        ArrayList<CreditCard> cards = db.getAllCards();
-        ArrayList<BankAccount> bankAccounts = db.getAllBankAccounts();
+        ArrayList<CreditCard> cards = db.getAllCardsForUser(userPreferences.getCurrentUser().getId());
+        ArrayList<BankAccount> bankAccounts = db.getAllBankAccountsForUser(userPreferences.getCurrentUser().getId());
         List<String> paymentOptions = new ArrayList<>();
 
         for (CreditCard card : cards) {

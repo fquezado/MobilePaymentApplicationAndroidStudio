@@ -13,6 +13,7 @@ public class ExistingPaymentsActivity extends AppCompatActivity {
 
     private ArrayList<Object> items; // Combined list of CreditCards and BankAccounts
     private RecyclerView recyclerView;
+    private UserPreferences userPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,12 +21,20 @@ public class ExistingPaymentsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_existing_payment_methods);
 
         recyclerView = findViewById(R.id.recyclerCardView);
+        userPreferences = new UserPreferences(this);
         PaymentOptionsDatabaseHelper db = new PaymentOptionsDatabaseHelper(this);
 
-        // Combine CreditCard and BankAccount lists into one list
-        items = new ArrayList<>();
-        items.addAll(db.getAllCards());
-        items.addAll(db.getAllBankAccounts());
+        User currentUser = userPreferences.getCurrentUser();
+        if (currentUser != null) {
+            int userId = currentUser.getId(); // Use the user's ID to fetch their payment options
+
+            // Combine CreditCard and BankAccount lists into one list
+            items = new ArrayList<>();
+            items.addAll(db.getAllCardsForUser(userId)); // Fetch cards for current user
+            items.addAll(db.getAllBankAccountsForUser(userId)); // Fetch bank accounts for current user
+        } else {
+            items = new ArrayList<>(); // Empty list if no user is logged in
+        }
 
         setAdapter();
     }
@@ -69,10 +78,10 @@ public class ExistingPaymentsActivity extends AppCompatActivity {
 
         if (item instanceof CreditCard) {
             CreditCard card = (CreditCard) item;
-            db.deleteCard(card.getCardNumber());
+            db.deleteCard(card.getCardNumber(), userPreferences.getCurrentUser().getId());
         } else if (item instanceof BankAccount) {
             BankAccount account = (BankAccount) item;
-            db.deleteBankAccount(account.getAccountNumber()); // Assuming you have a deleteBankAccount method
+            db.deleteBankAccount(account.getAccountNumber(), userPreferences.getCurrentUser().getId()); // Assuming you have a deleteBankAccount method
         }
 
         items.remove(position);
