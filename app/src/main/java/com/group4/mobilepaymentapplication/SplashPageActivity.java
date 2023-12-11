@@ -35,7 +35,6 @@ public class SplashPageActivity extends AppCompatActivity {
         findViewById(R.id.SplashPageContinueButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Start LoginActivity
                 Intent intent = new Intent(SplashPageActivity.this, LoginActivity.class);
                 startActivity(intent);
             }

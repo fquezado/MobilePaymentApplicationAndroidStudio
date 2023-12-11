@@ -20,7 +20,6 @@ public class User {
         this.name = name;
     }
 
-    // Getter and setter for email
     public String getEmail() {
         return email;
     }

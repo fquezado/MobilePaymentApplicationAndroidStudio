@@ -17,17 +17,15 @@ public class PaymentOptionsRecyclerAdapter extends RecyclerView.Adapter<PaymentO
     private int currentUserId;
 
     private UserPreferences userPreferences;
-    // Interface for click events
     public interface OnItemClickListener {
         void onItemClick(int position);
     }
 
-    // Method to set the click listener
     public void setOnItemClickListener(OnItemClickListener listener) {
         mListener = listener;
     }
 
-    // Constructor
+
     public PaymentOptionsRecyclerAdapter(ArrayList<Object> itemList, UserPreferences userPreferences){
         this.itemList = itemList;
         this.userPreferences = userPreferences;

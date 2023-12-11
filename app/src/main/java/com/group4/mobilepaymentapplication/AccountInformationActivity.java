@@ -46,7 +46,7 @@ public class AccountInformationActivity extends AppCompatActivity {
 
                 // Attempt to save the updated user
                 if (!userPreferences.saveUser(updatedUser)) {
-                    Toast.makeText(AccountInformationActivity.this, "Email already in use or error in updating", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AccountInformationActivity.this, "Email already in use!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
