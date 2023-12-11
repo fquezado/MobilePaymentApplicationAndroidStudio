@@ -36,7 +36,7 @@ public class RequestActivity extends AppCompatActivity {
         requestMethodSpinner = findViewById(R.id.request_method_spinner);
         populatePaymentMethodSpinner();
 
-        // Initialize the pay button and set its click listener
+        // Initialize the pay resetButton and set its click listener
         requestButton = findViewById(R.id.request_button);
         requestButton.setOnClickListener(new View.OnClickListener() {
             @Override

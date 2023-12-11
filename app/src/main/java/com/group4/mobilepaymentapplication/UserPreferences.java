@@ -3,16 +3,15 @@ package com.group4.mobilepaymentapplication;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class UserPreferences {
     private SharedPreferences sharedPreferences;
     private List<User> users;
+    private static int userIdCounter = 1;
 
     public UserPreferences(Context context) {
         sharedPreferences = context.getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
@@ -21,34 +20,28 @@ public class UserPreferences {
     }
 
     public boolean saveUser(User updatedUser) {
-        if (users != null) {
-            // Check if email is already used by another user
-            for (User user : users) {
-                if (user.getEmail().equals(updatedUser.getEmail()) && user.getId() != updatedUser.getId()) {
-                    Log.d("UserPreferences", "Email already in use: " + updatedUser.getEmail());
-                    return false; // Email already exists for another user
-                }
-            }
-
-            // Find and update the existing user or add as a new user
-            for (int i = 0; i < users.size(); i++) {
-                if (users.get(i).getId() == updatedUser.getId()) {
-                    users.set(i, updatedUser);
-                    saveUsersToSharedPreferences();
-                    Log.d("UserPreferences", "Updated user: " + updatedUser);
-                    return true;
-                }
-            }
-
-            users.add(updatedUser);
-            saveUsersToSharedPreferences();
-            Log.d("UserPreferences", "Saved new user: " + updatedUser);
-            return true;
-        } else {
+        if (users == null) {
             Log.e("UserPreferences", "Users list is null! Cannot save or update user.");
             return false;
         }
+
+        for (User user : users) {
+            if (user.getEmail().equals(updatedUser.getEmail()) && user.getId() != updatedUser.getId()) {
+                Log.d("UserPreferences", "Email already in use: " + updatedUser.getEmail());
+                return false; // Email already exists for another user
+            }
+        }
+
+        if (updatedUser.getId() == -1) { // Check if user ID is uninitialized
+            updatedUser.setId(userIdCounter++); // Assign a unique ID
+        }
+
+        users.add(updatedUser);
+        saveUsersToSharedPreferences();
+        Log.d("UserPreferences", "Saved new user: " + updatedUser);
+        return true;
     }
+
 
     public void updateLoggedInUserEmail(String newEmail) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -93,6 +86,11 @@ public class UserPreferences {
         return null;
     }
 
+    public List<User> getUsers() {
+        return users;
+    }
+
+
     private void saveUsersToSharedPreferences() {
         if (users != null) {
             SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -105,6 +103,16 @@ public class UserPreferences {
             Log.e("UserPreferences", "Users list is null! Cannot save to shared preferences.");
         }
     }
+
+    public void resetUsers() {
+        Log.d("UserPreferences", "Resetting users");
+        users.clear();
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.remove("USERS");
+        editor.apply();
+        Log.d("UserPreferences", "Users reset complete");
+    }
+
 
 
 }

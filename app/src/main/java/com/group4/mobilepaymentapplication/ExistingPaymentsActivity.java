@@ -2,6 +2,7 @@ package com.group4.mobilepaymentapplication;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -27,13 +28,17 @@ public class ExistingPaymentsActivity extends AppCompatActivity {
         User currentUser = userPreferences.getCurrentUser();
         if (currentUser != null) {
             int userId = currentUser.getId(); // Use the user's ID to fetch their payment options
+            Log.d("ExistingPaymentsActivity", "Current User ID: " + userId);
 
-            // Combine CreditCard and BankAccount lists into one list
             items = new ArrayList<>();
             items.addAll(db.getAllCardsForUser(userId)); // Fetch cards for current user
+            Log.d("ExistingPaymentsActivity", "Cards for user: " + items.size());
+
             items.addAll(db.getAllBankAccountsForUser(userId)); // Fetch bank accounts for current user
+            Log.d("ExistingPaymentsActivity", "Total payment methods for user: " + items.size());
         } else {
             items = new ArrayList<>(); // Empty list if no user is logged in
+            Log.d("ExistingPaymentsActivity", "No user logged in");
         }
 
         setAdapter();
@@ -79,9 +84,11 @@ public class ExistingPaymentsActivity extends AppCompatActivity {
         if (item instanceof CreditCard) {
             CreditCard card = (CreditCard) item;
             db.deleteCard(card.getCardNumber(), userPreferences.getCurrentUser().getId());
+            Log.d("ExistingPaymentsActivity", "Deleting CreditCard, User ID: " + card.getUserId());
         } else if (item instanceof BankAccount) {
             BankAccount account = (BankAccount) item;
             db.deleteBankAccount(account.getAccountNumber(), userPreferences.getCurrentUser().getId());
+            Log.d("ExistingPaymentsActivity", "Deleting BankAccount, User ID: " + account.getUserId());
         }
 
         items.remove(position);
