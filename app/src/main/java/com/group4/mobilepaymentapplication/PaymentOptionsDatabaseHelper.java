@@ -91,10 +91,12 @@ public class PaymentOptionsDatabaseHelper extends SQLiteOpenHelper {
 
         if (cursor.moveToFirst()) {
             do {
-                CreditCard card = new CreditCard(cursor.getString(1),
+                CreditCard card = new CreditCard
+                        (cursor.getInt(1),
                         cursor.getString(2),
                         cursor.getString(3),
-                        cursor.getString(4));
+                        cursor.getString(4),
+                        cursor.getString(5));
                 cardList.add(card);
             } while (cursor.moveToNext());
         }
@@ -134,9 +136,11 @@ public class PaymentOptionsDatabaseHelper extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 BankAccount account = new BankAccount(
-                        cursor.getString(1), // Account holder's name
-                        cursor.getString(2), // Account number
-                        cursor.getString(3)  // Routing number
+                        cursor.getInt(1), // userID
+                        cursor.getString(2), // Account holder's name
+                        cursor.getString(3),  // Account number
+                        cursor.getString(4) // Routing number
+
                 );
                 bankList.add(account);
             } while (cursor.moveToNext());

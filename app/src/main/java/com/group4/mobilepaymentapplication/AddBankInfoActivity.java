@@ -45,7 +45,7 @@ public class AddBankInfoActivity extends AppCompatActivity {
                 } else if (isBankAccountAlreadyAdded(accountNumber)) {
                     Toast.makeText(AddBankInfoActivity.this, "This Bank account already exists", Toast.LENGTH_SHORT).show();
                 } else {
-                    BankAccount account = new BankAccount(accountHolderName, accountNumber, routingNumber);
+                    BankAccount account = new BankAccount(userPreferences.getCurrentUser().getId(),accountHolderName, accountNumber, routingNumber);
                     PaymentOptionsDatabaseHelper db = new PaymentOptionsDatabaseHelper(AddBankInfoActivity.this);
                     db.addBankAccount(account, userPreferences.getCurrentUser().getId());
                     Toast.makeText(AddBankInfoActivity.this, "Bank account added successfully", Toast.LENGTH_SHORT).show();

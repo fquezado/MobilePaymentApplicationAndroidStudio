@@ -14,7 +14,9 @@ public class PaymentOptionsRecyclerAdapter extends RecyclerView.Adapter<PaymentO
 
     private ArrayList<Object> itemList;
     private OnItemClickListener mListener;
+    private int currentUserId; // Add a field to store the current user's ID
 
+    private UserPreferences userPreferences;
     // Interface for click events
     public interface OnItemClickListener {
         void onItemClick(int position);
@@ -26,8 +28,9 @@ public class PaymentOptionsRecyclerAdapter extends RecyclerView.Adapter<PaymentO
     }
 
     // Constructor
-    public PaymentOptionsRecyclerAdapter(ArrayList<Object> itemList) {
+    public PaymentOptionsRecyclerAdapter(ArrayList<Object> itemList, UserPreferences userPreferences){
         this.itemList = itemList;
+        this.userPreferences = userPreferences;
     }
 
     // ViewHolder class
@@ -65,17 +68,32 @@ public class PaymentOptionsRecyclerAdapter extends RecyclerView.Adapter<PaymentO
     @Override
     public void onBindViewHolder(@NonNull PaymentOptionsRecyclerAdapter.MyViewHolder holder, int position) {
         Object item = itemList.get(position);
+
+        int currentUserId = userPreferences.getCurrentUser().getId(); // Retrieve the current user's ID
+
         if (item instanceof CreditCard) {
             CreditCard card = (CreditCard) item;
-            holder.primaryText.setText("Card Number: " + card.getCardNumber());
-            holder.secondaryText.setText("Card Name: " + card.getName());
-
+            if (card.getUserId() == currentUserId) {
+                holder.primaryText.setText("Card Number: " + card.getCardNumber());
+                holder.secondaryText.setText("Card Name: " + card.getName());
+                holder.itemView.setVisibility(View.VISIBLE); // Show the item
+            } else {
+                holder.itemView.setVisibility(View.GONE); // Hide this item
+                holder.itemView.setLayoutParams(new RecyclerView.LayoutParams(0, 0));
+            }
         } else if (item instanceof BankAccount) {
             BankAccount account = (BankAccount) item;
-            holder.primaryText.setText("Account Holder: " + account.getAccountHolderName());
-            holder.secondaryText.setText("Account Number: " + account.getAccountNumber());
+            if (account.getUserId() == currentUserId) {
+                holder.primaryText.setText("Account Holder: " + account.getAccountHolderName());
+                holder.secondaryText.setText("Account Number: " + account.getAccountNumber());
+                holder.itemView.setVisibility(View.VISIBLE); // Show the item
+            } else {
+                holder.itemView.setVisibility(View.GONE); // Hide this item
+                holder.itemView.setLayoutParams(new RecyclerView.LayoutParams(0, 0));
+            }
         }
     }
+
 
     @Override
     public int getItemCount() {

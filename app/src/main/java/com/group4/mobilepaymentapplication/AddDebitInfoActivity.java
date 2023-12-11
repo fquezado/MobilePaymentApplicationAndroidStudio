@@ -47,7 +47,7 @@ public class AddDebitInfoActivity extends AppCompatActivity {
                 } else if (isDebitCardAlreadyAdded(cardNumber)) {
                     Toast.makeText(AddDebitInfoActivity.this, "This card already exists", Toast.LENGTH_SHORT).show();
                 } else {
-                    CreditCard creditCard = new CreditCard(cardName, cardNumber, expiryDate, cvv);
+                    CreditCard creditCard = new CreditCard(userPreferences.getCurrentUser().getId(), cardName, cardNumber, expiryDate, cvv);
                     db.addCard(creditCard, userPreferences.getCurrentUser().getId());
                     Toast.makeText(AddDebitInfoActivity.this, "Debit card added successfully", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(AddDebitInfoActivity.this, ExistingPaymentsActivity.class);

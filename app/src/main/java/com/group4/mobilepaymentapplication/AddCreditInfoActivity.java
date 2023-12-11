@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -49,7 +50,8 @@ public class AddCreditInfoActivity extends AppCompatActivity {
                 } else if (isCreditCardAlreadyAdded(cardNumber)) {
                     Toast.makeText(AddCreditInfoActivity.this, "This card already exists", Toast.LENGTH_SHORT).show();
                 } else {
-                    CreditCard creditCard = new CreditCard(cardName, cardNumber, expiryDate, cvv);
+                    CreditCard creditCard = new CreditCard(userPreferences.getCurrentUser().getId(), cardName, cardNumber, expiryDate, cvv);
+                    Log.d("AddCreditInfo", "Card created with name: " + creditCard.getName() + ", number: " + creditCard.getCardNumber());
                     db.addCard(creditCard, userPreferences.getCurrentUser().getId());
                     Toast.makeText(AddCreditInfoActivity.this, "Credit card added successfully", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(AddCreditInfoActivity.this, ExistingPaymentsActivity.class);

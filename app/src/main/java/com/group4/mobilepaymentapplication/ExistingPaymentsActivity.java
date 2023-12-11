@@ -40,7 +40,7 @@ public class ExistingPaymentsActivity extends AppCompatActivity {
     }
 
     private void setAdapter() {
-        PaymentOptionsRecyclerAdapter adapter = new PaymentOptionsRecyclerAdapter(items);
+        PaymentOptionsRecyclerAdapter adapter = new PaymentOptionsRecyclerAdapter(items, userPreferences);
         adapter.setOnItemClickListener(new PaymentOptionsRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
