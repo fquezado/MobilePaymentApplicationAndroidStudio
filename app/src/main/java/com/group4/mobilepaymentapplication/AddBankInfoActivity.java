@@ -84,11 +84,9 @@ public class AddBankInfoActivity extends AppCompatActivity {
                 return false;
             }
         } catch (Exception e) {
-            // Handle exception
             e.printStackTrace();
             return false; // Account addition failed
         } finally {
-            // Close cursor and database
             if (cursor != null) cursor.close();
             db.close();
         }

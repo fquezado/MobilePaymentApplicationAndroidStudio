@@ -3,7 +3,7 @@ package com.group4.mobilepaymentapplication;
 // BankAccount class
 
 public class BankAccount {
-    private int userId; // Added userId field
+    private int userId;
     private String accountHolderName;
     private String accountNumber;
     private String routingNumber;
@@ -15,8 +15,6 @@ public class BankAccount {
         this.accountNumber = accountNumber;
         this.routingNumber = routingNumber;
     }
-
-    // Getters and Setters
 
     public int getUserId() {
         return userId;

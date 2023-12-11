@@ -17,18 +17,15 @@ public class MainActivity extends AppCompatActivity {
     private TextView welcomeTextView;
     private Button receiveButton;
     private ImageButton settingsButton;
-    private UserPreferences userPreferences; // UserPreferences instance
+    private UserPreferences userPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        // Initialize UserPreferences
         userPreferences = new UserPreferences(this);
 
-        // Initialize UI components
         welcomeTextView = findViewById(R.id.HompageText);
         PayButtonMainPage = findViewById(R.id.PayButtonMainPage);
         receiveButton = findViewById(R.id.RequestButtonMainPage);
@@ -43,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
             welcomeTextView.setText("Welcome!");
         }
 
-        // Set up resetButton listeners
         settingsButton.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
             startActivity(intent);

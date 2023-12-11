@@ -89,11 +89,9 @@ public class AddCreditInfoActivity extends AppCompatActivity {
                 return false;
             }
         } catch (Exception e) {
-            // Handle exception
             e.printStackTrace();
             return false; // Card addition failed
         } finally {
-            // Close cursor and database
             if (cursor != null) cursor.close();
             db.close();
         }

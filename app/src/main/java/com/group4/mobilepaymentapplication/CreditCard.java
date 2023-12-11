@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 
 public class CreditCard implements Parcelable {
 
-    private int userId; // Added userId field
+    private int userId;
     String name;
     String cardNumber;
     String expiryDate;
@@ -22,7 +22,7 @@ public class CreditCard implements Parcelable {
     }
 
     protected CreditCard(Parcel in) {
-        userId = in.readInt(); // Read userId from parcel
+        userId = in.readInt();
         name = in.readString();
         cardNumber = in.readString();
         expiryDate = in.readString();
@@ -84,7 +84,7 @@ public class CreditCard implements Parcelable {
 
     @Override
     public void writeToParcel(@NonNull Parcel dest, int flags) {
-        dest.writeInt(userId); // Write userId to parcel
+        dest.writeInt(userId);
         dest.writeString(name);
         dest.writeString(cardNumber);
         dest.writeString(expiryDate);
