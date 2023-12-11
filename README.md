@@ -4,7 +4,7 @@ Implementation of Mobile Payment App through android studio
                                                  
 | Team-Member ID | Team-Member Name | Percentage Efforts in Particular Assignment | Brief of Efforts in the Tasks Contribution                                                                                                 |   |
 |----------------|------------------|---------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|---|
-| 1              | Luke             |                                             |                               
+| 1              | Luke             | 13%                                         | User Interface work                              
 | 2              | Claudio          | 15%                                         | Help implement the user profile and transaction history                                           
 | 3              | Haojie           |                                             |                                                    
 | 4              | Muhab            | 17%                                         | Debugging and Code Testing                                             
