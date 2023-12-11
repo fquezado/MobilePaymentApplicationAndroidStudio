@@ -81,7 +81,7 @@ public class ExistingPaymentsActivity extends AppCompatActivity {
             db.deleteCard(card.getCardNumber(), userPreferences.getCurrentUser().getId());
         } else if (item instanceof BankAccount) {
             BankAccount account = (BankAccount) item;
-            db.deleteBankAccount(account.getAccountNumber(), userPreferences.getCurrentUser().getId()); // Assuming you have a deleteBankAccount method
+            db.deleteBankAccount(account.getAccountNumber(), userPreferences.getCurrentUser().getId());
         }
 
         items.remove(position);

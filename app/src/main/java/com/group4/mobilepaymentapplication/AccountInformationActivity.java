@@ -46,6 +46,11 @@ public class AccountInformationActivity extends AppCompatActivity {
                     currentUser.setName(newName);
                 }
                 if (!newEmail.isEmpty()) {
+                    if(!userPreferences.saveUser(currentUser)) {
+                        Toast.makeText(AccountInformationActivity.this, "Email already in use", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
                     currentUser.setEmail(newEmail);
                 }
                 if (!newPassword.isEmpty()) {
@@ -54,6 +59,7 @@ public class AccountInformationActivity extends AppCompatActivity {
 
                 // Save updated user data
                 userPreferences.saveUser(currentUser);
+                userPreferences.updateLoggedInUserEmail(newEmail);
                 Toast.makeText(AccountInformationActivity.this, "Changes Saved", Toast.LENGTH_SHORT).show();
 
                 // Optionally navigate to another activity

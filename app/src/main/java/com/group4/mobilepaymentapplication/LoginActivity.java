@@ -36,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
 
         // Login button click listener
         loginButton.setOnClickListener(v -> {
+            userPreferences = new UserPreferences(this);
             String email = emailEditText.getText().toString().trim();
             String password = passwordEditText.getText().toString().trim();
             Log.d("LoginActivity", "Attempting login with email: " + email);
