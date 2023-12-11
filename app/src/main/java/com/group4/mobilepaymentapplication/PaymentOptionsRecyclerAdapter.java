@@ -14,7 +14,7 @@ public class PaymentOptionsRecyclerAdapter extends RecyclerView.Adapter<PaymentO
 
     private ArrayList<Object> itemList;
     private OnItemClickListener mListener;
-    private int currentUserId; // Add a field to store the current user's ID
+    private int currentUserId;
 
     private UserPreferences userPreferences;
     // Interface for click events
@@ -33,7 +33,6 @@ public class PaymentOptionsRecyclerAdapter extends RecyclerView.Adapter<PaymentO
         this.userPreferences = userPreferences;
     }
 
-    // ViewHolder class
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView primaryText;
         private TextView secondaryText;
@@ -76,9 +75,9 @@ public class PaymentOptionsRecyclerAdapter extends RecyclerView.Adapter<PaymentO
             if (card.getUserId() == currentUserId) {
                 holder.primaryText.setText("Card Number: " + card.getCardNumber());
                 holder.secondaryText.setText("Card Name: " + card.getName());
-                holder.itemView.setVisibility(View.VISIBLE); // Show the item
+                holder.itemView.setVisibility(View.VISIBLE);
             } else {
-                holder.itemView.setVisibility(View.GONE); // Hide this item
+                holder.itemView.setVisibility(View.GONE);
                 holder.itemView.setLayoutParams(new RecyclerView.LayoutParams(0, 0));
             }
         } else if (item instanceof BankAccount) {
@@ -86,9 +85,9 @@ public class PaymentOptionsRecyclerAdapter extends RecyclerView.Adapter<PaymentO
             if (account.getUserId() == currentUserId) {
                 holder.primaryText.setText("Account Holder: " + account.getAccountHolderName());
                 holder.secondaryText.setText("Account Number: " + account.getAccountNumber());
-                holder.itemView.setVisibility(View.VISIBLE); // Show the item
+                holder.itemView.setVisibility(View.VISIBLE);
             } else {
-                holder.itemView.setVisibility(View.GONE); // Hide this item
+                holder.itemView.setVisibility(View.GONE);
                 holder.itemView.setLayoutParams(new RecyclerView.LayoutParams(0, 0));
             }
         }

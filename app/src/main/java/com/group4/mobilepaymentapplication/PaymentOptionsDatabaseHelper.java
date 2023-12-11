@@ -92,7 +92,7 @@ public class PaymentOptionsDatabaseHelper extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 CreditCard card = new CreditCard
-                        (cursor.getInt(1),
+                        (cursor.getInt(1), // userID
                         cursor.getString(2),
                         cursor.getString(3),
                         cursor.getString(4),
@@ -111,12 +111,12 @@ public class PaymentOptionsDatabaseHelper extends SQLiteOpenHelper {
         db.delete(TABLE_BANK_ACCOUNTS, KEY_ACCOUNT_NUMBER + " = ? AND " + KEY_USER_ID + " = ?", new String[] { accountNumber, String.valueOf(userId) });
         db.close();
     }
-    // Method to add a bank account
+
     public void addBankAccount(BankAccount account, int userId) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(KEY_USER_ID, userId); // Include the user's ID
+        values.put(KEY_USER_ID, userId);
         values.put(KEY_ACCOUNT_HOLDER_NAME, account.getAccountHolderName());
         values.put(KEY_ACCOUNT_NUMBER, account.getAccountNumber());
         values.put(KEY_ROUTING_NUMBER, account.getRoutingNumber());
@@ -125,7 +125,6 @@ public class PaymentOptionsDatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    // Method to get all bank accounts
     public ArrayList<BankAccount> getAllBankAccountsForUser(int userId) {
         ArrayList<BankAccount> bankList = new ArrayList<>();
         String selectQuery = "SELECT  * FROM " + TABLE_BANK_ACCOUNTS + " WHERE " + KEY_USER_ID + " = " + userId;
