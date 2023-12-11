@@ -26,7 +26,7 @@ public class PaymentOptionsDatabaseHelper extends SQLiteOpenHelper {
 
     protected static final String KEY_USER_ID = "user_id";
 
-    protected static final int DATABASE_VERSION = 9;
+    protected static final int DATABASE_VERSION = 10;
 
 
     public PaymentOptionsDatabaseHelper(Context context) {

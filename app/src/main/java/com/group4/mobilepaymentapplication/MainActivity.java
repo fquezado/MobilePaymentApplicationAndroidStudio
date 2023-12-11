@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         // Initialize UserPreferences
         userPreferences = new UserPreferences(this);
 
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             welcomeTextView.setText("Welcome!");
         }
 
-        // Set up button listeners
+        // Set up resetButton listeners
         settingsButton.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
             startActivity(intent);

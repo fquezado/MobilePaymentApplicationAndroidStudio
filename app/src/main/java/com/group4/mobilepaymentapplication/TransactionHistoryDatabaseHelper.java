@@ -10,7 +10,7 @@ import java.util.List;
 
 public class TransactionHistoryDatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "transactions.db";
-    private static final int DATABASE_VERSION = 10;
+    private static final int DATABASE_VERSION = 11;
 
     private static final String TABLE_TRANSACTIONS = "transactions";
     private static final String KEY_ID = "id";

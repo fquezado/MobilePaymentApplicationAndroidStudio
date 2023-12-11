@@ -25,7 +25,6 @@ public class AccountInformationActivity extends AppCompatActivity {
         changePasswordEditText = findViewById(R.id.change_password);
         userPreferences = new UserPreferences(this);
 
-        // Load existing data for the current user
         loadExistingData();
 
         saveChangesButton = findViewById(R.id.save_changes_button);
@@ -33,36 +32,29 @@ public class AccountInformationActivity extends AppCompatActivity {
         saveChangesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Get the current user
                 User currentUser = userPreferences.getCurrentUser();
 
-                // Get user input
-                String newName = changeAccountNameEditText.getText().toString();
-                String newEmail = changeAccountEmailEditText.getText().toString();
-                String newPassword = changePasswordEditText.getText().toString();
+                String newName = changeAccountNameEditText.getText().toString().trim();
+                String newEmail = changeAccountEmailEditText.getText().toString().trim();
+                String newPassword = changePasswordEditText.getText().toString().trim();
 
-                // Update user data only if changed
-                if (!newName.isEmpty()) {
-                    currentUser.setName(newName);
-                }
-                if (!newEmail.isEmpty()) {
-                    if(!userPreferences.saveUser(currentUser)) {
-                        Toast.makeText(AccountInformationActivity.this, "Email already in use", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
+                // Clone the current user to update details
+                User updatedUser = new User(newName.isEmpty() ? currentUser.getName() : newName,
+                        newEmail.isEmpty() ? currentUser.getEmail() : newEmail,
+                        newPassword.isEmpty() ? currentUser.getPassword() : newPassword);
+                updatedUser.setId(currentUser.getId());
 
-                    currentUser.setEmail(newEmail);
-                }
-                if (!newPassword.isEmpty()) {
-                    currentUser.setPassword(newPassword);
+                // Attempt to save the updated user
+                if (!userPreferences.saveUser(updatedUser)) {
+                    Toast.makeText(AccountInformationActivity.this, "Email already in use or error in updating", Toast.LENGTH_SHORT).show();
+                    return;
                 }
 
-                // Save updated user data
-                userPreferences.saveUser(currentUser);
-                userPreferences.updateLoggedInUserEmail(newEmail);
+                if (!newEmail.isEmpty() && !newEmail.equals(currentUser.getEmail())) {
+                    userPreferences.updateLoggedInUserEmail(newEmail);
+                }
+
                 Toast.makeText(AccountInformationActivity.this, "Changes Saved", Toast.LENGTH_SHORT).show();
-
-                // Optionally navigate to another activity
                 Intent intent = new Intent(AccountInformationActivity.this, MainActivity.class);
                 startActivity(intent);
             }
@@ -70,9 +62,7 @@ public class AccountInformationActivity extends AppCompatActivity {
     }
 
     private void loadExistingData() {
-        // Get the current user
         User currentUser = userPreferences.getCurrentUser();
-
         changeAccountNameEditText.setText(currentUser.getName());
         changeAccountEmailEditText.setText(currentUser.getEmail());
         changePasswordEditText.setText(currentUser.getPassword());
