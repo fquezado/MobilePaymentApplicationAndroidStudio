@@ -15,3 +15,5 @@ Implementation of Mobile Payment App through android studio
 User/Actor Info:
 1. Has transaction history and payment methods - Name: John Doe, Email: user@psu.edu , Password: password
 2. Has no transaction history and payment methods, clear slate - Name : admin, Email: admin, Password: admin
+#
+MAKE SURE TO USE PIXEL 6 API 31 EMULATOR!
