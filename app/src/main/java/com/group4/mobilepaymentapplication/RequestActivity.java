@@ -22,6 +22,8 @@ public class RequestActivity extends AppCompatActivity {
 
     private Button requestButton;
 
+    private UserPreferences userPreferences;
+
 
 
     @Override
@@ -29,16 +31,16 @@ public class RequestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_request);
 
+        userPreferences = new UserPreferences(this);
+
         requestMethodSpinner = findViewById(R.id.request_method_spinner);
         populatePaymentMethodSpinner();
 
-        // Initialize the pay button and set its click listener
         requestButton = findViewById(R.id.request_button);
         requestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onRequestMade(); // Process the payment
-                // Navigate to TransactionHistoryActivity to view the transaction
                 startActivity(new Intent(RequestActivity.this, TransactionHistoryActivity.class));
             }
         });
@@ -60,16 +62,13 @@ public class RequestActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        amount = -amount;
-
-        // Now, you can use the 'amount' variable to save in the database
         TransactionHistoryDatabaseHelper dbHelper = new TransactionHistoryDatabaseHelper(this);
-        dbHelper.addTransaction(new Transaction(String.valueOf(amount), paymentMethod, currentDate));
+        dbHelper.addTransaction(new Transaction(String.valueOf(amount), paymentMethod, currentDate), userPreferences.getCurrentUser().getId());
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar
+        // Adds items to the action bar
         getMenuInflater().inflate(R.menu.settings_menu, menu);
         return true;
     }
@@ -88,17 +87,15 @@ public class RequestActivity extends AppCompatActivity {
     }
     private void populatePaymentMethodSpinner() {
         PaymentOptionsDatabaseHelper db = new PaymentOptionsDatabaseHelper(this);
-        ArrayList<CreditCard> cards = db.getAllCards();
-        ArrayList<BankAccount> bankAccounts = db.getAllBankAccounts();
+        ArrayList<CreditCard> cards = db.getAllCardsForUser(userPreferences.getCurrentUser().getId());
+        ArrayList<BankAccount> bankAccounts = db.getAllBankAccountsForUser(userPreferences.getCurrentUser().getId());
         List<String> requestOptions = new ArrayList<>();
 
         for (CreditCard card : cards) {
-            // format as needed
             requestOptions.add("Credit/Debit Card: " + card.getCardNumber());
         }
 
         for (BankAccount account : bankAccounts) {
-            // format as needed
             requestOptions.add("Bank Account: " + account.getAccountNumber());
         }
 

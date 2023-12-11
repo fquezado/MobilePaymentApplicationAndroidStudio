@@ -20,22 +20,25 @@ public class PayActivity extends AppCompatActivity {
     private Spinner paymentMethodSpinner;
     private Button payButton;
 
+    private UserPreferences userPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pay);
 
+        userPreferences = new UserPreferences(this);
+
         // Initialize the payment method spinner
         paymentMethodSpinner = findViewById(R.id.payment_method_spinner);
         populatePaymentMethodSpinner();
 
-        // Initialize the pay button and set its click listener
+        // Initialize the pay resetButton and set its click listener
         payButton = findViewById(R.id.send_button);
         payButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onPaymentMade(); // Process the payment
-                // Navigate to TransactionHistoryActivity to view the transaction
                 startActivity(new Intent(PayActivity.this, TransactionHistoryActivity.class));
             }
         });
@@ -57,14 +60,15 @@ public class PayActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        // Now, you can use the 'amount' variable to save in the database
+        amount = -amount;
+
         TransactionHistoryDatabaseHelper dbHelper = new TransactionHistoryDatabaseHelper(this);
-        dbHelper.addTransaction(new Transaction(String.valueOf(amount), paymentMethod, currentDate));
+        dbHelper.addTransaction(new Transaction(String.valueOf(amount), paymentMethod, currentDate), userPreferences.getCurrentUser().getId());
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar
+        // Adds items to the action bar
         getMenuInflater().inflate(R.menu.settings_menu, menu);
         return true;
     }
@@ -84,8 +88,8 @@ public class PayActivity extends AppCompatActivity {
 
     private void populatePaymentMethodSpinner() {
         PaymentOptionsDatabaseHelper db = new PaymentOptionsDatabaseHelper(this);
-        ArrayList<CreditCard> cards = db.getAllCards();
-        ArrayList<BankAccount> bankAccounts = db.getAllBankAccounts();
+        ArrayList<CreditCard> cards = db.getAllCardsForUser(userPreferences.getCurrentUser().getId());
+        ArrayList<BankAccount> bankAccounts = db.getAllBankAccountsForUser(userPreferences.getCurrentUser().getId());
         List<String> paymentOptions = new ArrayList<>();
 
         for (CreditCard card : cards) {

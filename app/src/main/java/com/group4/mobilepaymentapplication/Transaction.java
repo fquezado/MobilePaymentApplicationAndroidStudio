@@ -12,7 +12,6 @@ public class Transaction {
         this.date = date;
     }
 
-    // Getters
     public String getAmount() {
         return amount;
     }
@@ -25,7 +24,6 @@ public class Transaction {
         return date;
     }
 
-    // Setters (if needed)
     public void setAmount(String amount) {
         this.amount = amount;
     }

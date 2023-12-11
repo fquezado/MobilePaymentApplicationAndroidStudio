@@ -1,8 +1,9 @@
 package com.group4.mobilepaymentapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
+
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,7 +11,7 @@ import android.widget.Toast;
 
 public class AccountInformationActivity extends AppCompatActivity {
 
-    private EditText change_account_name, change_account_email, change_password;
+    private EditText changeAccountNameEditText, changeAccountEmailEditText, changePasswordEditText;
     private Button saveChangesButton;
     private UserPreferences userPreferences;
 
@@ -19,12 +20,11 @@ public class AccountInformationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_information);
 
-        change_account_name = findViewById(R.id.change_account_name);
-        change_account_email = findViewById(R.id.change_account_email);
-        change_password = findViewById(R.id.change_password);
+        changeAccountNameEditText = findViewById(R.id.change_account_name);
+        changeAccountEmailEditText = findViewById(R.id.change_account_email);
+        changePasswordEditText = findViewById(R.id.change_password);
         userPreferences = new UserPreferences(this);
 
-        // Load existing data
         loadExistingData();
 
         saveChangesButton = findViewById(R.id.save_changes_button);
@@ -32,28 +32,29 @@ public class AccountInformationActivity extends AppCompatActivity {
         saveChangesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String currentName = userPreferences.getUserName(); // Assuming this method exists
-                String currentEmail = userPreferences.getUserEmail(); // Assuming this method exists
-                String currentPassword = userPreferences.getUserPassword(); // Assuming this method exists
+                User currentUser = userPreferences.getCurrentUser();
 
-                String newName = change_account_name.getText().toString();
-                String newEmail = change_account_email.getText().toString();
-                String newPassword = change_password.getText().toString();
+                String newName = changeAccountNameEditText.getText().toString().trim();
+                String newEmail = changeAccountEmailEditText.getText().toString().trim();
+                String newPassword = changePasswordEditText.getText().toString().trim();
 
-                // Update only if the field is changed
-                if (!newName.isEmpty()) {
-                    currentName = newName;
-                }
-                if (!newEmail.isEmpty()) {
-                    currentEmail = newEmail;
-                }
-                if (!newPassword.isEmpty()) {
-                    currentPassword = newPassword;
+                // Clone the current user to update details
+                User updatedUser = new User(newName.isEmpty() ? currentUser.getName() : newName,
+                        newEmail.isEmpty() ? currentUser.getEmail() : newEmail,
+                        newPassword.isEmpty() ? currentUser.getPassword() : newPassword);
+                updatedUser.setId(currentUser.getId());
+
+                // Attempt to save the updated user
+                if (!userPreferences.saveUser(updatedUser)) {
+                    Toast.makeText(AccountInformationActivity.this, "Email already in use!", Toast.LENGTH_SHORT).show();
+                    return;
                 }
 
-                userPreferences.saveUser(currentName, currentEmail, currentPassword);
+                if (!newEmail.isEmpty() && !newEmail.equals(currentUser.getEmail())) {
+                    userPreferences.updateLoggedInUserEmail(newEmail);
+                }
+
                 Toast.makeText(AccountInformationActivity.this, "Changes Saved", Toast.LENGTH_SHORT).show();
-                // Optionally navigate to another activity
                 Intent intent = new Intent(AccountInformationActivity.this, MainActivity.class);
                 startActivity(intent);
             }
@@ -61,9 +62,9 @@ public class AccountInformationActivity extends AppCompatActivity {
     }
 
     private void loadExistingData() {
-        // Assuming these methods exist in userPreferences
-        change_account_name.setText(userPreferences.getUserName());
-        change_account_email.setText(userPreferences.getUserEmail());
-        change_password.setText(userPreferences.getUserPassword());
+        User currentUser = userPreferences.getCurrentUser();
+        changeAccountNameEditText.setText(currentUser.getName());
+        changeAccountEmailEditText.setText(currentUser.getEmail());
+        changePasswordEditText.setText(currentUser.getPassword());
     }
 }

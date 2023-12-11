@@ -1,20 +1,23 @@
 package com.group4.mobilepaymentapplication;
 
-// BankAccount class
 
 public class BankAccount {
+    private int userId;
     private String accountHolderName;
     private String accountNumber;
     private String routingNumber;
 
-    // Constructor
-    public BankAccount(String accountHolderName, String accountNumber, String routingNumber) {
+    public BankAccount(int userId, String accountHolderName, String accountNumber, String routingNumber) {
+        this.userId = userId;
         this.accountHolderName = accountHolderName;
         this.accountNumber = accountNumber;
         this.routingNumber = routingNumber;
     }
 
-    // Getters and Setters
+    public int getUserId() {
+        return userId;
+    }
+
     public String getAccountHolderName() {
         return accountHolderName;
     }
@@ -27,4 +30,3 @@ public class BankAccount {
         return routingNumber;
     }
 }
-

@@ -1,6 +1,5 @@
 package com.group4.mobilepaymentapplication;
 
-import com.group4.mobilepaymentapplication.Transaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
