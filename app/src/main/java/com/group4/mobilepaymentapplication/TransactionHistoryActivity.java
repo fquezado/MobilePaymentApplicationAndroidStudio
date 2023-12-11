@@ -21,9 +21,9 @@ public class TransactionHistoryActivity extends AppCompatActivity {
 
         // Fetch the current user
         User currentUser = userPreferences.getCurrentUser();
-        int userId = -1;  // Default value indicating no user found
+        int userId = -1;  // Default value = no user found
         if (currentUser != null) {
-            userId = currentUser.getId(); // Get user ID
+            userId = currentUser.getId();
         }
 
         RecyclerView recyclerView = findViewById(R.id.transactionRecyclerView);
@@ -33,7 +33,7 @@ public class TransactionHistoryActivity extends AppCompatActivity {
         if (userId != -1) {
             transactions = dbHelper.getAllTransactionsForUser(userId);
         } else {
-            transactions = new ArrayList<>(); // Empty list or handle accordingly if no user is found
+            transactions = new ArrayList<>(); // Handle accordingly if no user is found
         }
 
         TransactionHistoryRecyclerAdapter adapter = new TransactionHistoryRecyclerAdapter(transactions);

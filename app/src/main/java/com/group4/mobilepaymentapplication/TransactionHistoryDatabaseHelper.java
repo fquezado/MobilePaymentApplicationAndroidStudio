@@ -80,5 +80,4 @@ public class TransactionHistoryDatabaseHelper extends SQLiteOpenHelper {
         return transactions;
     }
 
-    // You can also add other methods as needed, for example, a method to delete a transaction
 }

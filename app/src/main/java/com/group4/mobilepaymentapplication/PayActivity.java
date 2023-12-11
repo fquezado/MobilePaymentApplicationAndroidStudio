@@ -39,7 +39,6 @@ public class PayActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 onPaymentMade(); // Process the payment
-                // Navigate to TransactionHistoryActivity to view the transaction
                 startActivity(new Intent(PayActivity.this, TransactionHistoryActivity.class));
             }
         });
@@ -69,7 +68,7 @@ public class PayActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar
+        // Adds items to the action bar
         getMenuInflater().inflate(R.menu.settings_menu, menu);
         return true;
     }

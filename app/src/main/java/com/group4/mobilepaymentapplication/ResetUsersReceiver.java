@@ -16,10 +16,9 @@ public class ResetUsersReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         if ("com.group4.mobilepaymentapplication.RESET_USERS".equals(intent.getAction())) {
-            // Create an intent that will open your MainActivity (or another activity) to handle the reset
             Intent resetIntent = new Intent(context, MainActivity.class);
             resetIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            resetIntent.putExtra("reset_action", true); // An extra flag to indicate reset action is required
+            resetIntent.putExtra("reset_action", true);
 
             PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, resetIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
@@ -41,7 +40,7 @@ public class ResetUsersReceiver extends BroadcastReceiver {
         }
 
         Notification notification = new NotificationCompat.Builder(context, channelId)
-                .setSmallIcon(com.google.android.material.R.drawable.mtrl_checkbox_button) // Replace with your app's notification icon
+                .setSmallIcon(com.google.android.material.R.drawable.mtrl_checkbox_button)
                 .setContentTitle("Reset Users")
                 .setContentText("Tap to reset user data.")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)

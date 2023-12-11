@@ -29,7 +29,7 @@ public class UserPreferences {
             // Check if the email is already in use by another user
             if (user.getEmail().equalsIgnoreCase(updatedUser.getEmail()) && user.getId() != updatedUser.getId()) {
                 Log.d("UserPreferences", "Email already in use: " + updatedUser.getEmail());
-                return false; // Email already exists for another user
+                return false;
             }
         }
 
@@ -43,9 +43,9 @@ public class UserPreferences {
             }
         }
 
-        // If the user is new (ID not found), assign a unique ID and add to the list
+        // If the user is new, assign a unique ID
         if (updatedUser.getId() == -1) {
-            updatedUser.setId(userIdCounter++); // Assign a unique ID
+            updatedUser.setId(userIdCounter++);
         }
         users.add(updatedUser);
         saveUsersToSharedPreferences();
